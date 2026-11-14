@@ -61,21 +61,28 @@ h1{font-size:clamp(28px,4vw,42px);font-weight:600;letter-spacing:-.025em;line-he
 .sub{margin:0 0 20px;color:var(--mute);font-size:18px}
 .tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 40px;font-size:14px;color:var(--mute);line-height:1}
 .tag svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round}
-h2.hd{font-size:21px;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:56px 0 18px;padding-top:22px;border-top:1px solid var(--line)}
-p{margin:0 0 20px}
+h2.hd{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:64px 0 22px;padding-top:20px;border-top:1px solid var(--line)}
+p{margin:0 0 22px}
+/* project pages: one reading column, one rhythm */
+.doc>p,.doc>h2.hd,.doc>.cp,.doc>.lb{max-width:36em}
+.doc>p{line-height:1.75}
+.cp{margin:0 0 48px;padding:2px 0 2px 22px;border-left:3px solid var(--fg)}
+.cp p{margin:0;font-size:21px;font-weight:500;line-height:1.5;letter-spacing:-.01em}
+.lab{display:block;margin:0 0 2px;font-size:17px;font-weight:600;line-height:1.7;color:var(--fg)}
+.lb{margin:0 0 30px;line-height:1.75}
 p b{font-weight:600}
 p.q{font-size:24px;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin:0 0 20px}
 p.nt{margin:32px 0 10px;font-weight:600}
 .ct{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;color:var(--mute)}
 .ct a:hover{color:var(--fg)}
 /* screenplay */
-.sp{font-family:"Courier Prime","Courier New",Courier,monospace;font-size:15px;line-height:1.6;border-left:1px solid var(--line);padding:4px 0 4px 24px;margin:20px 0 28px}
+.sp{font-family:"Courier Prime","Courier New",Courier,monospace;font-size:18px;line-height:1.65;border-left:1px solid var(--line);padding:4px 0 4px 24px;margin:20px 0 28px}
 .sp p{margin:0 0 12px}
 .sp .s{font-weight:700;margin-top:26px}
 .sp .c{margin:20px 0 0 36%}
 .sp .p{margin:0 0 0 28%}
 .sp .d{margin:0 8% 12px 20%}
-@media(max-width:560px){.sp{font-size:13px;padding-left:14px}.sp .c{margin-left:28%}.sp .p{margin-left:20%}.sp .d{margin:0 2% 12px 10%}}
+@media(max-width:560px){.cp{padding-left:16px;margin-bottom:36px}.cp p{font-size:19px}.sp{font-size:16px;padding-left:14px}.sp .c{margin-left:28%}.sp .p{margin-left:20%}.sp .d{margin:0 2% 12px 10%}}
 /* audio */
 .au{margin:8px 0 28px}
 .au figcaption{font-size:14px;color:var(--mute);margin:0 0 8px}
@@ -191,7 +198,7 @@ t|Fast paced edit cuts to happy nature themed imagery; with scenes like purple g
 t|The message of “Claude in a laptop” being the catalyst is subtle here, deliberately. Since people don’t necessarily and explicitly like the idea of sitting in front of their computers and finding solutions for their real world troubles.
 `},
 {n:"ChatGPT",m:"g",L:`
-t|Problem: As competition and negative narratives around AI intensifies, ChatGPT must strengthen its market leadership while protecting and improving public perception of the brand.
+t|Chosen Problem: As competition and negative narratives around AI intensifies, ChatGPT must strengthen its market leadership while protecting and improving public perception of the brand.
 t|(In the AI world, Claude plays the good cop against ChatGPT. Context: All the founders of Anthropic left OpenAI on the premise that it isn’t taking risks seriously and that Sam Altman isn’t reliable or trustworthy. Even ad campaigns by Anthropic at Superbowl take jabs at ChatGPT.)
 h|Strategy
 t|We are not fighting against that “bad cop” image. In fact, subtly building on that. The company’s mission is “AGI for all people’s benefit”. We are picking that “mission-orientedness” as the theme to continue in the messaging, with an absurd filter as an imagery element over the top.
@@ -226,8 +233,8 @@ d|Your time isn’t yours. It is for your mission. It’s for your society.
 a|CHATGPT LOGO.
 `},
 {n:"The Hindu",m:"i",L:`
+t|Chosen Problem: Newspapers are seen as an old technology. They are more effortful than mobile phones and culturally seen as outdated.
 h|Strategy
-t|Problem: Newspapers are seen as an old technology. They are more effortful than mobile phones and culturally seen as outdated.
 t|Insight: People like to associate with cool, aesthetic things.
 t|Strategy: Make reading The Hindu the embodiment of a cool aesthetic ritual or practice to participate in.
 t|Advantage: Most brands compete on inside-the-box metrics in the newspaper world like content reliability, trust etc.
@@ -306,7 +313,8 @@ c|KID 2
 d|“Uncle, aap theek toh ho na?”
 t|Continuation of such a storyline would make the messaging stick for the brand.
 `},
-{n:"Hinge",m:"g",L:`
+{n:"Hinge",m:"u",L:`
+t|Chosen Problem: According to SSRS (2026) Dating-app usage is softening in the US: the proportion of adults currently using dating apps fell from 7% in 2025 to 6% in January 2026.
 h|Strategy
 t|Though quantitative data is unavailable, but observationally, a lot of people using dating apps have already had at least one breakup or infatuation before.
 t|So their current identity, as they use the apps, isn’t an isolated one. That context of “1)how they feel about themselves in the “love” context”, “2)feel about others”, and “3) feel about themselves with others. sits deep.”
@@ -369,7 +377,7 @@ t|Culturally, women have participated in the ritual of self care, but when that 
 t|If we closely look at the word “makeup” itself, the implicit interpretation can seem like it is asking for making up for something lost or something that’s already not there. So we have redefined makeup as “touchup”, which tells you everything you need to know about us. When we say we are touching up, there’s already an underlying layer called our natural face, which allows for a bit of cosmetic sparkle on it. Again quite opposite to the general coined use of touching up, which is more makeup on already done makeup.
 t|One last thing. Warning for that matter. It is going to be hard. To choose less. To have more accountability. To see people using anything that reads “beauty” and being on the other side of that conversation. To be more open and less reclusive about your face and how you see yourself. To allow the natural fit of yours to be your own, this time. Truly.
 h|Strategy
-t|Problem: The Indian makeup industry or makeup industry as a whole doesn’t address the problems with the western overconsumption framing of beauty. Which leads to dissatisfaction and exacerbated insecurities women continue to feel— even while using the thing that was intended to fix it.
+t|Chosen Problem: The Indian makeup industry or makeup industry as a whole doesn’t address the problems with the western overconsumption framing of beauty. Which leads to dissatisfaction and exacerbated insecurities women continue to feel— even while using the thing that was intended to fix it.
 t|Insight: By explicitly telling the truth, bearing the burden of costly signalling and taking the loss on one’s own revenue by not selling heavy makeup, the brand wouldn’t preach what it stands for but will show it. Such a positioning can’t be faked. With almost no brand holding such strong opposing values against the flux of the hyper-consumerist makeup market, addressing that we have been selling insecurities would be an honest word in the pool of “you look bad, you will look better by using…”.
 t|Advantage: differentiation in the industry or clean makeup market specifically, is mainly on metrics like ingredients, clean or natural, skin inclusive etc., and the assumption of “more is better” is implicit in top players’ positioning. What looks like direct competition, in the indian context, for clean brands like Minimalist is in fact not, on a fundamental level. Minimalist is built on transparency on the product ingredients side. DON’T differentiates on the psychology of makeup usage itself and on its philosophy.
 t|Strategy: the name “DON’T” holds the negation factor, which makes people have an extreme take on it. Not something you can ignore. Either like the philosophy or feel discomfort around it, because it requires redressal of your own values and choices. The brand picks the niche of women who also oppose the heavy makeup narrative and dislike the scrutiny attached to the act of makeup itself. By framing light makeup as literally the right kind of makeup, the brand takes the one sided risk of redefining what beauty is. It can then continue to hold its radical messaging with its new expected momentum and continue its marketing efforts in this same view.`}
@@ -386,7 +394,10 @@ function lines(L){
   var i=r.indexOf("|"),t=r.slice(0,i),x=r.slice(i+1),scr=/^[sacpd]$/.test(t);
   if(scr&&!sp){o+='<div class="sp">';sp=1}
   if(!scr&&sp){o+="</div>";sp=0}
-  if(t=="t"){var q=(x.charAt(0)=="“"&&x.slice(-1)=="”")?" q":"";x=esc(x).replace(LAB,"<b>$1:</b>");o+='<p class="'+q.trim()+'">'+x+"</p>"}
+  if(t=="t"){var q=(x.charAt(0)=="“"&&x.slice(-1)=="”")?" q":"";var mm=LAB.exec(x);
+   if(mm){var bd=esc(x.slice(mm[0].length).replace(/^\s+/,""));
+    o+=mm[1]=="Chosen Problem"?'<div class="cp"><span class="lab">Chosen Problem:</span><p>'+bd+"</p></div>":'<p class="lb"><span class="lab">'+mm[1]+":</span>"+bd+"</p>"}
+   else o+='<p class="'+q.trim()+'">'+esc(x)+"</p>"}
   else if(t=="h")o+='<h2 class="hd">'+esc(x)+"</h2>";
   else if(t=="n")o+='<p class="nt">'+esc(x)+"</p>";
   else if(t=="m"){var a=x.split("|");o+='<figure class="au"><figcaption>'+esc(a[1])+'</figcaption><audio controls preload="none" src="'+a[0]+'"></audio></figure>'}
@@ -452,7 +463,7 @@ function route(h){
  if(!it)sec=null;
  var key=sec||(films?"films":""),wide=false,html,title="Aditya Verma";
  if(it){
-  html="<h1>"+esc(it.n)+"</h1>"+(it.sub?'<p class="sub">'+esc(it.sub)+"</p>":"")+(it.m?'<span class="tag">'+(it.m=="i"?CHAKRA+"Indian market":GLOBE+"Global market")+"</span>":'<div style="height:24px"></div>')+lines(it.L);
+  html="<h1>"+esc(it.n)+"</h1>"+(it.sub?'<p class="sub">'+esc(it.sub)+"</p>":"")+(it.m?'<span class="tag">'+(it.m=="i"?CHAKRA+"Indian market":it.m=="u"?GLOBE+"US market":GLOBE+"Global market")+"</span>":'<div style="height:24px"></div>')+lines(it.L);
   wide=/g\|/.test(it.L);title=it.n+" — Aditya Verma";
   sin.innerHTML=D[sec].map(function(p,j){return '<a href="#'+sec+"-"+j+'"'+(j==i?' class="on" aria-current="page"':"")+">"+esc(p.n)+"</a>"}).join("");
   side.className=""
@@ -462,7 +473,7 @@ function route(h){
    sin.innerHTML='<a href="#films" class="on" aria-current="page">Silence Can Speak</a>';side.className=""}
   else html=HOME
  }
- main.className="main"+(wide?" wide":"");main.innerHTML=html;document.title=title;
+ main.className="main"+(wide?" wide":"")+((it||films)?" doc":"");main.innerHTML=html;document.title=title;
  grid.className=key?"":"home";top_.className=key?"":"home";
  corner.classList.toggle("on",!key);if(key)corner.removeAttribute("aria-current");else corner.setAttribute("aria-current","page");
  top_.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.s==key)});
