@@ -112,10 +112,42 @@ p.nt{margin:32px 0 10px;font-weight:600}
  .main{padding-top:36px}
 }
 @media(prefers-reduced-motion:reduce){.word{animation:none;transform:none}.stack .line+.line{display:none}}
+/* outreach */
+.ow{position:relative}
+.osv{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.pl{fill:none;stroke:var(--fg);stroke-linecap:round;stroke-linejoin:round}
+.pl.a{stroke-width:2;opacity:.8}
+.pl.b{stroke-width:1;opacity:.45;transform:translate(.9px,.7px)}
+.pd{fill:var(--fg);opacity:.8}
+.main h1.oh{margin:0 0 44px}
+.ol{margin:64px 0 0}
+.ow.l{padding-bottom:100px}
+.ms{margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.ms a{text-underline-offset:4px}
+.oa{display:block;width:max-content;max-width:100%;font-size:clamp(26px,3.6vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.25;text-decoration:none;padding:2px 0 8px;margin:0 0 34px}
+.od{margin:0;max-width:30em;font:italic 13.5px/1.6 Georgia,"Times New Roman",serif;color:var(--mute)}
+.ow.m{padding-bottom:110px}
+.oc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;align-items:start;margin:0 0 120px}
+.oc:last-child{margin-bottom:0}
+.oc:nth-child(even) .of{order:-1}
+.of{position:sticky;top:24px;margin:0}
+.of img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.ob h2{margin:0 0 18px;font-size:24px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.ob h2 a{text-decoration:none}
+.ob h2 .ar{color:var(--mute);font-weight:400}
+.ob .lab{margin:28px 0 4px}
+.ob ul{margin:0 0 22px;padding-left:1.15em}
+.ob li{margin:0 0 6px}
+.ob .cp{margin:6px 0 26px}
+.ob .cp small{display:block;margin:0 0 2px;font-size:14px;line-height:1.5;color:var(--mute)}
+.ob p:last-child,.ob ul:last-child{margin-bottom:0}
+@media(max-width:1000px){#top a{padding:11px 12px}}
+@media(max-width:860px){.oc{grid-template-columns:minmax(0,1fr);row-gap:26px;margin-bottom:84px}.oc .of,.oc:nth-child(even) .of{order:-1;position:static}}
+@media(max-width:560px){#top a{padding:8px 4px;font-size:14px}}
 </style></head><body>
 <div id="grid" class="home">
 <a id="corner" class="on" href="#" aria-current="page"><span class="brand">Aditya Verma</span></a>
-<nav id="top" class="home" aria-label="Sections"><div class="tc"><a href="#cp-0" data-s="cp">Spec Creative Portfolio</a></div><div class="tc"><a href="#films" data-s="films">Short films</a></div><div class="tc"><a href="#o-0" data-s="o">Others</a></div></nav>
+<nav id="top" class="home" aria-label="Sections"><div class="tc"><a href="#cp-0" data-s="cp">Spec Creative Portfolio</a></div><div class="tc"><a href="#films" data-s="films">Short films</a></div><div class="tc"><a href="#out" data-s="out">Outreach</a></div><div class="tc"><a href="#o-0" data-s="o">Others</a></div></nav>
 <nav id="side" class="e" aria-label="Projects"><div class="in"></div></nav>
 <main id="main" class="main"></main>
 <button id="th" type="button"></button>
@@ -451,6 +483,121 @@ function initDecks(){
  })}
 
 
+/* outreach */
+var OUT='<div class="ow l"><h1 class="oh">Giving you, at least, a chance, to hire me.</h1>'
++'<p class="lb"><span class="lab">Problem</span>Agencies get a lot of portfolios. It takes effort to go through new problems and their solutions carefully, and to judge them accurately.</p>'
++'<p class="lb"><span class="lab">Insight</span>Humans respond better to familiar things. Something they have spent their time on.</p>'
++'<p class="lb"><span class="lab">Solution</span>I am going to pick the agencies I want to work for. Take their recent work. Change and tweak the statements, strategy, and copy to get the most out of “creativity itself” and potentially add value in the mix. Then send a polite LinkedIn message with that work.</p>'
++'<p class="od">All creative artifacts made here do not represent any brand or agency and are created solely by the author for demonstration of his ideas and suggestions.</p>'
++'<nav class="ol" aria-label="Agencies"><a class="oa" href="#out-motion">Motion Sickness</a></nav>'
++'</div>';
+
+var MS="https://motionsickness.company/work/";
+var CAMP=[
+{t:"The Kathmandu",u:MS+"outsideyourcomfortzone/",i:"motion-kathmandu.jpg",a:"Night campsite under a tarp, two people by a fire, with the text Home is Outside.",h:`
+<p>“Outside, your comfort zone” is such a cool line. I said “wow” when I got the meaning a little later, after first reading it. It carries two meanings:</p>
+<ul><li>It shows people that outside (the outdoors) is your comfort zone.</li><li>It gives the more direct, commonly said motivation: get outside your comfort zone.</li></ul>
+<span class="lab">My addition</span>
+<div class="cp"><small>Copy</small><p>“Home is Outside.”</p></div>
+<ul><li>It matches how the films take human experiences that seem indoor and personal, and show them outside.</li><li>On a philosophical level, humans were meant to stay in the natural world more than the artificial one.</li><li>The line itself is ironic.</li></ul>
+<span class="lab">Creative direction</span>
+<p>The current films first use close-up shots to show the elegance of simple human experiences. Then they show shots of nature, to describe how those same moments, which people usually have inside their houses, look literally in the wild.</p>
+<p>My addition is to show this contrast visually. Firstly showing those everyday moments when it seems like the person is inside their house (but really the film is still of the outside— which is portrayed well). Then a surprising transition into the wild.</p>
+<p>Current creative direction is straight.</p>
+<p>Seeing that the person is brushing, reading or sleeping “outside” should come as a surprise. (This would bring in the realisation of “what they currently are” versus “what they could be”.)</p>
+<span class="lab">If I were writing purely for the geeks</span>
+<p>“Home’s outside.” It shows how the inner self (home) has possession of the outside world, and of course, simply, home is outside.</p>`},
+
+{t:"Karangahape Road",u:MS+"eatit/",i:"motion-karangahape.jpg",a:"Six black-and-white posters with food and kink imagery under the line Smell, bite, chew and swallow.",h:`
+<p>The campaign shows kink + food imagery for restaurants, embracing the context of the place. “Eat It” is simple, short and authoritative, and it captures the essence.</p>
+<span class="lab">My addition</span>
+<p>I might want to go over the top for this one, to capture as many senses as I can. Both food and sex involve multiple senses in their connotations.</p>
+<div class="cp"><small>Copy</small><p>“Smell, bite, chew and swallow.”</p></div>`},
+
+{t:"Griffin’s",u:MS+"life-needs-a-biscuit-/",i:"motion-griffins.jpg",a:"Red billboard reading Kiwis need a, followed by a round biscuit.",h:`
+<p>The campaign portrays 24 different films with 24 different moments of normal, everyday life: people in New Zealand eating the biscuits. It is not only simply real, but it also calmly shows an important relationship between biscuits and our lives, which in my experience wasn’t as highlighted.</p>
+<p>In India, all the ads were a celebrity endorsing while eating it, or a jingle for kids, or something else I don’t even remember anymore.</p>
+<span class="lab">My addition</span>
+<p>I feel we are underscoring the potency of community, and a macro-level integration of the biscuit with the whole nation. We are already covering the campaign holistically with people from different walks of life (the 24 different moments) in the country. So why not actually say that too?</p>
+<p>The company is also purely New Zealand led. So “life” can be tweaked to “Kiwis”.</p>
+<div class="cp"><small>Copy</small><p>“Kiwis need a biscuit.”</p></div>`},
+
+{t:"Heart of the City",u:MS+"straightotheheart/",i:"motion-heart-of-the-city.jpg",a:"Close-up of a taxi roof sign reading Free Taxi, with a screen showing an event, its price per person and time.",h:`
+<p>I think the film beautifully captures old-style advertising and the idea of service. It invites the old fun times, and makes spontaneous bystanders, locals and tourists excited to hop on and experience different destinations in the heart of the city.</p>
+<span class="lab">My addition</span>
+<p>A banner highlighting a specific event, on top of the taxi or somewhere else on it.</p>
+<p>People don’t visit the city center unless something specific excites or urges them. Money or fare was never an issue in itself, so a free ride alone wouldn’t compel them to go there.</p>
+<p>The ask has to be specific, very exciting and unique, and shown to them that day. For example:</p>
+<ul><li>an artist coming there</li><li>a specific trade fair</li><li>on normal days, simply an exciting food deal at a particular restaurant.</li></ul>
+<p>And of course, the more spontaneous ones can still ride without a destination.</p>
+<p>The organisation can decide on some agreement and periodically recommend specific events, with price and details, on the taxi itself. Rather than only being a tour guide.</p>`},
+
+{t:"Les Mills",u:MS+"beimperfect/",i:"motion-les-mills.jpg",a:"Black-and-white photo of a smiling man at a weight bar, with purple text Only the first step, unlocks the second, and white text There is no perfect.",h:`
+<p>The cinematography is great. The inner monologue, yes sir. And the insight that perfectionism doesn’t help you by itself is shown well. The intimidation and self-consciousness are real, and countering them allows people to be themselves. “Susshh!” highlights a key tension-releasing moment in the film.</p>
+<span class="lab">My addition</span>
+<p>Rather than saying “be who you are and stay imperfect”, I don’t want to dictate what you can or should be. My point is that, your aspiration of being perfect itself is false.</p>
+<span class="lab">For films</span>
+<p>The creative direction would shift. Currently the films show the diverse experiences of normal people. Instead, they would directly show the inner monologue and feelings of the buff folks.</p>
+<p>They would show how even the people we aspire to or think are at the top, the regular gym-goers and bros, are in fact struggling just the same. That would make us feel seen.</p>
+<span class="lab">My personal taste</span>
+<p>I can’t not share this while I’m thinking about the topic: I might want to mock playfully, with lines like “All the fatties, join!” or “Feeling skinny, fellas?”</p>
+<p>When all the gyms are either body-positive or buffness-positive, we will be silly! Haha.</p>`}
+];
+var MOTION='<h1 class="oh">Motion Sickness</h1><div class="ow m">'+CAMP.map(function(c){return '<article class="oc"><div class="ob"><h2><a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'<span class="ar"> ↗</span></a></h2>'+c.h+'</div><figure class="of"><img src="'+c.i+'" alt="'+c.a+'"></figure></article>'}).join("")+'</div><p class="ms"><a href="https://motionsickness.company/" target="_blank" rel="noopener">Shout out to Motion Sickness ↗</a></p>';
+
+/* pencil: one smooth hand-drawn line through anchor points */
+function cm(P){var d="M"+P[0][0].toFixed(1)+" "+P[0][1].toFixed(1);
+ for(var i=0;i<P.length-1;i++){var a=P[i-1]||P[i],b=P[i],c=P[i+1],e=P[i+2]||c;
+  d+="C"+[b[0]+(c[0]-a[0])/6,b[1]+(c[1]-a[1])/6,c[0]-(e[0]-b[0])/6,c[1]-(e[1]-b[1])/6,c[0],c[1]].map(function(n){return n.toFixed(1)}).join(" ")}
+ return d}
+function rr(el,w){var a=el.getBoundingClientRect(),b=w.getBoundingClientRect();return{l:a.left-b.left,r:a.right-b.left,t:a.top-b.top,b:a.bottom-b.top}}
+function outPts(w){
+ var as=[].slice.call(w.querySelectorAll(".oa")),P=[],f=rr(as[0],w),r,y,L,R;
+ P.push([-18,f.t-110],[-24,f.t-40]);
+ as.forEach(function(a,i){r=rr(a,w);y=r.b-4;L=r.l-8;R=r.r+10;
+  (i%2?[[R,y-1],[(L+R)/2,y+4],[L,y]]:[[L,y],[(L+R)/2,y+4],[R,y-1]]).forEach(function(q){P.push(q)})});
+ if(as.length%2)P.push([R+40,y+26],[R+16,y+54]);else P.push([L-30,y+26],[L-8,y+54]);
+ return P}
+function motionPts(w){
+ var rows=[].slice.call(w.querySelectorAll(".oc")),W=w.clientWidth,nr=matchMedia("(max-width:860px)").matches,
+  xc=nr?-14:W/2,A=nr?12:Math.min(W*.2,180),P=[],r0=rr(rows[0],w);
+ P.push([xc-(nr?0:10),r0.t-60]);
+ rows.forEach(function(row,i){var r=rr(row,w),s=i%2?1:-1,top=r.t+4,bot=r.b-4;
+  P.push([xc,top],[xc+s*(nr?4:8),(top+bot)/2],[xc,bot]);
+  if(rows[i+1])P.push([xc-s*A,(bot+rr(rows[i+1],w).t)/2])});
+ var z=rr(rows[rows.length-1],w),s=((rows.length-1)%2)?1:-1;
+ P.push([xc-s*A*.6,z.b+40],[xc-s*A*.3,z.b+70]);
+ return P}
+var PEN=null;
+function stopPen(){if(PEN){PEN.off();PEN=null}}
+function startPen(w,build,scrl){
+ stopPen();
+ var ns="http://www.w3.org/2000/svg",rm=matchMedia("(prefers-reduced-motion: reduce)").matches,a,b,L,smp=[],first=true,raf=0,ro=null,lw=w.offsetWidth,lh=w.offsetHeight;
+ function set(n){var o=rm?0:L-n;a.style.strokeDashoffset=o;b.style.strokeDashoffset=o}
+ function upd(){raf=0;if(!scrl)return;var ty=innerHeight*.78-w.getBoundingClientRect().top,n=0;
+  for(var i=smp.length-1;i>=0;i--)if(smp[i][1]<=ty){n=smp[i][0];break}
+  set(n)}
+ function draw(){
+  var o=w.querySelector(".osv");if(o)o.remove();
+  var P=build(w),d=cm(P),s=document.createElementNS(ns,"svg"),c=document.createElementNS(ns,"circle");
+  s.setAttribute("class","osv");s.setAttribute("aria-hidden","true");
+  a=document.createElementNS(ns,"path");b=document.createElementNS(ns,"path");
+  a.setAttribute("d",d);b.setAttribute("d",d);a.setAttribute("class","pl a");b.setAttribute("class","pl b");
+  c.setAttribute("class","pd");c.setAttribute("cx",P[0][0]);c.setAttribute("cy",P[0][1]);c.setAttribute("r",3.2);
+  s.appendChild(a);s.appendChild(b);s.appendChild(c);w.insertBefore(s,w.firstChild);
+  L=a.getTotalLength();a.style.strokeDasharray=b.style.strokeDasharray=L+" "+L;
+  smp=[];for(var i=0;i<=240;i++){var q=a.getPointAtLength(L*i/240);smp.push([L*i/240,q.y])}
+  if(scrl)upd();
+  else if(first&&!rm){set(0);a.getBoundingClientRect();a.style.transition=b.style.transition="stroke-dashoffset 2.2s cubic-bezier(.45,0,.2,1)";set(L)}
+  else set(L);
+  first=false}
+ function onS(){if(!raf)raf=requestAnimationFrame(upd)}
+ draw();
+ if(scrl)addEventListener("scroll",onS,{passive:true});
+ if(window.ResizeObserver){var t=0;ro=new ResizeObserver(function(){if(w.offsetWidth==lw&&w.offsetHeight==lh)return;lw=w.offsetWidth;lh=w.offsetHeight;cancelAnimationFrame(t);t=requestAnimationFrame(draw)});ro.observe(w)}
+ else addEventListener("resize",draw);
+ PEN={off:function(){removeEventListener("scroll",onS);removeEventListener("resize",draw);if(ro)ro.disconnect()}}}
+
 var grid=$("#grid"),side=$("#side"),sin=$("#side .in"),main=$("#main"),top_=$("#top"),corner=$("#corner"),cur=null;
 function setTheme(t){document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(e){}
  $("#th").textContent=t=="dark"?"Light":"Dark";$("#th").setAttribute("aria-label","Switch to "+(t=="dark"?"light":"dark")+" mode")}
@@ -461,7 +608,7 @@ function route(h){
  if(h===cur)return;cur=h;
  var m=/^(cp|o)-(\d+)$/.exec(h),sec=m&&m[1],i=m?+m[2]:-1,it=sec&&D[sec][i],films=h=="films";
  if(!it)sec=null;
- var key=sec||(films?"films":""),wide=false,html,title="Aditya Verma";
+ var out=h=="out"||h=="out-motion",key=sec||(films?"films":(out?"out":"")),wide=false,html,title="Aditya Verma";
  if(it){
   html="<h1>"+esc(it.n)+"</h1>"+(it.sub?'<p class="sub">'+esc(it.sub)+"</p>":"")+(it.m?'<span class="tag">'+(it.m=="i"?CHAKRA+"Indian market":it.m=="u"?GLOBE+"US market":GLOBE+"Global market")+"</span>":'<div style="height:24px"></div>')+lines(it.L);
   wide=/g\|/.test(it.L);title=it.n+" — Aditya Verma";
@@ -471,6 +618,8 @@ function route(h){
   sin.innerHTML="";side.className="e";
   if(films){html=FILM;wide=true;title="Short films — Aditya Verma";
    sin.innerHTML='<a href="#films" class="on" aria-current="page">Silence Can Speak</a>';side.className=""}
+  else if(h=="out"){html=OUT;title="Outreach — Aditya Verma"}
+  else if(out){html=MOTION;wide=true;title="Motion Sickness — Aditya Verma"}
   else html=HOME
  }
  main.className="main"+(wide?" wide":"")+((it||films)?" doc":"");main.innerHTML=html;document.title=title;
@@ -478,6 +627,8 @@ function route(h){
  corner.classList.toggle("on",!key);if(key)corner.removeAttribute("aria-current");else corner.setAttribute("aria-current","page");
  top_.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.s==key)});
  window.scrollTo(0,0);
+ stopPen();var pw=main.querySelector(".ow");if(pw)startPen(pw,h=="out"?outPts:motionPts,h!="out");
+ var bk=h=="out-motion";corner.setAttribute("href",bk?"#out":"#");corner.querySelector(".brand").textContent=bk?"← Back":"Aditya Verma";if(bk)corner.setAttribute("aria-label","Back to Outreach");else corner.removeAttribute("aria-label");
  initDecks()}
 function go(h){try{location.hash=h}catch(e){}route(h)}
 document.addEventListener("click",function(e){
