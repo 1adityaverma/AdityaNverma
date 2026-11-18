@@ -95,6 +95,16 @@ p.nt{margin:32px 0 10px;font-weight:600}
 .sl{position:relative;background:#fff;border:1px solid var(--line)}
 .sl canvas{display:block;width:100%;height:auto}
 .sl a.ov{position:absolute;display:block;cursor:pointer}
+/* campaign poster */
+.doc>.fg{max-width:36em;margin:6px 0 40px}
+.fg img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.doc>.fg.pt{max-width:24em}
+.main.pz{max-width:1200px}
+.main.pz.doc{display:grid;grid-template-columns:minmax(0,36em) minmax(0,1fr);column-gap:clamp(32px,5vw,72px);align-items:start}
+.main.pz>*{grid-column:1}
+.main.pz>.fg{grid-column:2;grid-row:1/span 200;position:sticky;top:24px;margin:0;max-width:none}
+.main.pz>.fg.pt{max-width:380px}
+@media(max-width:900px){.main.pz.doc{display:block}.main.pz>.fg{position:static;max-width:36em;margin:6px 0 40px}.main.pz>.fg.pt{max-width:24em}}
 /* film */
 .vf{display:block;width:100%;aspect-ratio:16/9;background:#000;margin:0 0 36px}
 @media(max-width:760px){
@@ -167,6 +177,7 @@ t|Chosen Problem: “In October 2026, ChatGPT drew 55.7% of worldwide generative
 t|Strategy: AI confidently hallucinates and gives a wrong answer. Claude is visibly better than ChatGPT at saying that it doesn’t know, and that it is only guessing on highly uncertain topics. A clear important differentiation, and it should be highlighted.
 t|Creative Insight: Admitting faults builds trust, whereas constant agreement (“yes-manning”) tends to erode it. If AI can demonstrate this kind of honesty, people will likely trust it more over time.
 t|Solution: Tagline- “We know when we don’t,” coining Socrates’s “I know that I know nothing,” signifying self-awareness and limitations, rather than deluding folks.
+f|spec-claude.jpg|Poster for Claude: a couple lying head to head on teal sheets, with the line We know when we don’t.
 n|Script theme
 t|By showing everyday scenarios where the response starts with “I don’t know” rather than an immediate answer, the ad portrays exploration and thought over certainty, which is exactly what Claude’s tagline, “Keep thinking,” asks for. It also mimics how Claude actually begins responding to complex questions.
 t|Script 1, specifically, highlights the question of “god”, with a single, simple moment as an imaginative reflection that has transcended human thought for as long as time.
@@ -242,6 +253,7 @@ t|To the point that immediate safety isn’t on their horizon, since they are ju
 t|These are company heads, geeks on the internet, which are also ultimately the people who are willing to pay and compel others via organic promotion.
 h|Creative
 t|“Your time is not yours.”
+f|spec-chatgpt.jpg|Poster for ChatGPT: a lone photographer on a hill under a blue sky, with the line Your time. Your time isn’t yours.
 t|“Your time is not yours.” At first it sounds like a supreme leader laying down orders to their peasants. But the actual dictatorial ruling of a society is more subtle and only implicitly stated.
 t|The motivational, mission-oriented, half-done line gives the feel we want. It is provocative, but all we want to communicate is not slavery to AI but slavery to one’s mission and its duty to society, which has been considered noble even by the Greeks.
 h|Video ad script
@@ -273,6 +285,7 @@ t|Advantage: Most brands compete on inside-the-box metrics in the newspaper worl
 t|Aesthetic framing for a newspaper is outside the box. The Hindu’s already established quality/reliability distinction over content (“written by journalists” campaign) can now, also take over the aesthetic experience of reading a newspaper.
 h|Creative
 t|“Newspapers aren’t cool anymore. Their readers always were.”
+f|spec-the-hindu.jpg|Poster for The Hindu: a man reading a newspaper in a dim, old hall, with the line Newspapers aren’t cool anymore. Their readers always were.|p
 t|Insight: Cultural- we associate newspapers with uncles. So by association, if we made the uncle cool, that would transfer to The Hindu.
 t|Psychological- How others see us while we read a newspaper, or how we imagine they see us, gives it an aesthetic value that a mobile phone cannot match.
 t|Idea: Inventing the character of the typical newspaper reading uncle, with the tagline “Beta, when has depth not been cool?”
@@ -358,6 +371,7 @@ t|Solution: Address that unsaid subcontext with storytelling.
 h|Creative
 t|“Message to you: See me in everyone and know that I am happy for you.”
 t|“Message to you: See me in everyone and know that I am happy for you.” (first part—Continuation of love. Second part— well being assurance.)
+f|spec-hinge.jpg|Poster for Hinge: a smiling woman in a black-and-white double exposure of a street festival, with the line See me in everyone and know that I am happy for you.
 t|Acts as a messaging to your ex, that I am in the process of healing and at the same time hoping the best for you; while knowing that love continues, regardless of humans literally changing,places— like a musical chair for life.
 t|Portraying love as a continuous chain rather than cuts and joints. A bit philosophical— eternal love and all souls as one.
 t|Which, continues the brand image as an app meant to make love feel emotionally healthy.
@@ -434,6 +448,7 @@ function lines(L){
   else if(t=="n")o+='<p class="nt">'+esc(x)+"</p>";
   else if(t=="m"){var a=x.split("|");o+='<figure class="au"><figcaption>'+esc(a[1])+'</figcaption><audio controls preload="none" src="'+a[0]+'"></audio></figure>'}
   else if(t=="g"){var g=x.split("|");o+='<p class="hint">Scroll to read the deck. Pinch to zoom on a phone.</p><div class="deck" data-pdf="'+g[0]+'" data-alt="'+g[1]+'"></div>'}
+  else if(t=="f"){var f=x.split("|");o+='<figure class="fg'+(f[2]=="p"?" pt":"")+'"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy"></figure>'}
   else if(t=="l"){var l=x.split("|");o+='<p><a href="'+l[0]+'" target="_blank" rel="noopener">'+l[1]+" ↗</a></p>"}
   else if(scr)o+='<p class="'+t+'">'+esc(x)+"</p>";
  });
@@ -624,7 +639,7 @@ function route(h){
   else if(out){html=MOTION;wide=true;title="Motion Sickness — Aditya Verma"}
   else html=HOME
  }
- main.className="main"+(wide?" wide":"")+((it||films)?" doc":"");main.innerHTML=html;document.title=title;
+ main.className="main"+(wide?" wide":"")+((it||films)?" doc":"")+((it&&/(^|\n)f\|/.test(it.L))?" pz":"");main.innerHTML=html;document.title=title;
  grid.className=key?"":"home";top_.className=key?"":"home";
  corner.classList.toggle("on",!key);if(key)corner.removeAttribute("aria-current");else corner.setAttribute("aria-current","page");
  top_.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.s==key)});
