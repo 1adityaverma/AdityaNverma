@@ -198,7 +198,7 @@ h1{font-family:var(--serif)}.cp{border-left-color:var(--cr)}.lab{color:var(--pu)
 .m2{margin:0 0 20px;font-size:16.5px}.bk{display:block;background:var(--cr);color:#fff;padding:14px;text-align:center;text-decoration:none;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.1em}.bk:hover{background:#000}
 .bn{padding:20px 28px;font-size:18px;line-height:1.3;color:#fff;border-top:2px solid #000}
 
-.cd{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.cd{position:relative;aspect-ratio:3/2;overflow:hidden;background:#111}
 .cd .ty{position:absolute;left:0;top:0;z-index:1;background:var(--c);color:#fff;padding:6px 10px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em}
 .cd .tm{z-index:1}.cd .pp{z-index:3}
 .ov{position:absolute;inset:0;padding:46px 18px 44px;background:linear-gradient(rgba(11,31,77,.9),rgba(11,31,77,.82));color:#fff;opacity:0;transition:opacity .18s}
@@ -207,6 +207,26 @@ h1{font-family:var(--serif)}.cp{border-left-color:var(--cr)}.lab{color:var(--pu)
 .ov .by{margin:8px 0 0;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.85)}
 .ov .mt{margin:14px 0 0;font:11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75)}
 @media(hover:none){.ov{opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 18px 42px;background:linear-gradient(transparent 35%,rgba(11,31,77,.94))}.ov .mt{display:none}}
+
+.main .cd>img{width:100%;height:100%;max-width:none;object-fit:cover}
+.cd img[src*="the-hindu"]{object-position:center 60%}
+.rd{position:absolute;right:0;bottom:0;z-index:4;background:#fff;color:#000;padding:6px 10px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;text-decoration:none}.rd:hover{background:var(--c);color:#fff}
+.pt{display:table;margin:0 auto 16px;text-align:left}.pt p:before{content:"•";margin-right:9px;color:#ff5d7d}
+.mb{padding-bottom:22px}.m1{margin-bottom:20px}
+
+#cards{display:flex;gap:26px;align-items:flex-start}.col{flex:1;min-width:0;display:flex;flex-direction:column;gap:26px}
+.cd{aspect-ratio:auto;min-height:160px}
+.main .cd>img{position:static;display:block;width:100%;height:auto;max-width:none;object-fit:fill;filter:none}
+.cd video{object-fit:contain}
+.bk{text-transform:none;letter-spacing:.01em;font-size:15px}
+
+.hf{display:flex}.hf input{flex:1;min-width:0;border:2px solid #000;border-right:0;border-radius:0;padding:12px 14px;font:inherit;font-size:16px;background:#f0f3f7}
+.hf button{border:2px solid #000;background:var(--cr);color:#fff;padding:0 18px;font:700 15px var(--mono);cursor:pointer}.hf button:hover{background:#000}.hf button:disabled{opacity:.6}
+.hn{margin:10px 0 0;font-size:14px;min-height:1.2em}
+
+.m3{margin:14px 0 0;font-size:14px;line-height:1.7;color:var(--mute)}.m3 a{color:#000}
+.wa{display:inline-block;background:#dcf8c6;color:#000;border-radius:8px 8px 8px 2px;padding:0 8px;line-height:1.5;font-weight:500}.wa i{font-style:normal;font-size:11px;color:#8a9a8a;margin-left:4px}
+.m3 .hi{height:30px;width:auto;vertical-align:middle;margin:0 2px}
 @media(max-width:860px){#app{grid-template-columns:minmax(0,1fr)}#hd{padding:16px;margin-bottom:16px}.hr i{display:none}#sb{position:static;max-height:none;padding:0 16px 16px}.pfd{display:none}.pfm{display:block;margin-top:30px}.main.hm{padding:0 16px 60px}#sb .lk{display:flex;overflow-x:auto;gap:14px}#sb .lk a{white-space:nowrap}}
 </style></head><body>
 <div id="app"><header id="hd"><a id="brand" href="#">Aditya Verma<span>.</span></a><div class="hr"><i>Creative portfolio</i><a href="mailto:adityavermaworkid@gmail.com">Email</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">LinkedIn</a></div></header><aside id="sb"></aside><main id="main" class="main"></main></div><div id="md" hidden></div>
@@ -686,11 +706,11 @@ S('Problem','According to SSRS (2026), the share of US adults currently using da
 S('Insight','I have no numbers for this, only observation: many people on dating apps have already had a breakup or an infatuation. Apps point only to the future, though the past stays heavy. A mild melancholy can show love as a continuous chain rather than cuts, and speak to what neither person on a date says aloud.'),
 S('Line','“See me in everyone and know that I am happy for you.” The first half is love continuing. The second half is an assurance of well-being, as if to an ex.'),
 S('Scene','Chloe, back from a trip with friends, reads a letter in voice-over over photos of the trip. It opens: “Did we die? We didn’t. We both know it.” It closes: “Know that I see you in everyone and I know that you are happy for me.” Her friends start reading it too. Hinge logo.')]},
-airbnb:{t:'Why photos beat 5-star reviews on Airbnb Experiences',key:'o',sk:['Business analysis'],m:'i',mf:'real',full:'#o-0',fit:1,img:'airbnb-cooking-photos.jpg',alt:'Foreign guests cooking and eating with a Delhi host. Courtesy @explorerealindia.',s:[
+airbnb:{t:'Why photos beat 5-star reviews on Airbnb Experiences',key:'o',sk:['Business analysis'],m:'i',mf:'real',full:'#o-0',fit:1,img:'airbnb-cooking-photos.jpg',ci:'airbnb-card.jpg',alt:'Foreign guests cooking and eating with a Delhi host. Courtesy @explorerealindia.',s:[
 S('What I did','A product teardown of Airbnb Experiences, a vertical inside the lodging business that gives existing guests more to book. The core user is a foreign tourist staying in Delhi or Gurugram. I looked at friends travelling together and split them by how they book: the deliberate planner, the intuitive selector and the impulse adventurer.'),
 S('What I found','I walked through choosing a home-cooking host near Delhi, as a foreigner would. Clear, high-quality photos of earlier foreign guests win the first impression. They suggest no language barrier, safety and cultural understanding. Written reviews only confirm that trust, and almost every host has 5 stars, often given out of courtesy.'),
 S('What I’d do next','<ul><li>Offer stay and experience as one discounted package.</li><li>Train good hosts, and give them exclusive deals in return.</li><li>Let guests rate language and cultural knowledge separately.</li><li>Add video reviews, so safety is easier to verify.</li></ul>The main metric would be total Experience bookings, with user ratings as the quality check.')]},
-zomato:{t:'Five interviews, one problem: life after you hit order',key:'o',sk:['Research'],m:'i',mf:'real',full:'#o-1',fit:1,img:'zomato-empathy-map.jpg',alt:'Empathy map from one Zomato interview: says, thinks, does, feels.',s:[
+zomato:{t:'Five interviews, one problem: life after you hit order',key:'o',sk:['Research'],m:'i',mf:'real',full:'#o-1',fit:1,img:'zomato-empathy-map.jpg',ci:'zomato-card.jpg',alt:'Empathy map from one Zomato interview: says, thinks, does, feels.',s:[
 S('What I did','Five one-hour, one-on-one interviews with students and early-career professionals. For the first 80% of each, I let the person lead and tell their own stories. Only at the end did I show the idea I was testing: a faster Zomato checkout that skips the home page, with an opt-out.'),
 S('What I found','All four active users raised delivery problems without being asked: the app not showing where the order is, drivers and restaurants not doing what they promised, and poor coordination between all three. Chatbots gave false reassurance. One person said: “8 out of every 15–16 orders I place are frustrating.” The fifth person doesn’t order online at all, because of price, family habit and never having started.<br><br>The quick-checkout idea got a hesitant yes from almost everyone.'),
 S('What I’d do next','Test it with real users in a narrower group first. Zomato can’t fix drivers directly, but clearer updates after the order can still ease the worry people feel.')]},
@@ -712,9 +732,9 @@ var FIL=[],CLR={'Case studies':'#b0102f',Ideas:'#4c1d95'};
 var GRP=[['Work',['Case studies','Ideas']]];
 var BULB='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg>';
 function card(c){var cs=c.ty=='Case studies',col=cs?'#b0102f':'#4c1d95',
- inner='<img'+(c.l?' class="l"':'')+' src="'+c.img+'" alt="" loading="lazy" onerror="this.remove()"><span class="ty">'+(cs?'Case study':'Idea')+'</span><span class="tm">'+c.tm+'</span>'+(c.f?'<span class="pp"></span>':'')+'<div class="ov"><h3>'+c.t+'</h3>'+(c.by?'<p class="by">'+c.by+'</p>':'')+'<p class="mt">'+c.sk.join(', ')+' · '+c.m+' · '+c.w+'</p></div>';
+ inner='<img'+(c.l?' class="l"':'')+' src="'+c.img+'" alt="" loading="lazy" onerror="this.remove()"><span class="ty">'+(cs?'Case study':'Idea')+'</span><span class="tm">'+c.tm+'</span>'+(c.f?'<span class="pp"></span><a class="rd" href="#films">Read the story →</a>':'')+'<div class="ov"><h3>'+c.t+'</h3>'+(c.by?'<p class="by">'+c.by+'</p>':'')+'<p class="mt">'+c.sk.join(', ')+' · '+c.m+' · '+c.w+'</p></div>';
  return c.f?'<div class="cd fc" style="--c:'+col+'" role="button" tabindex="0" aria-label="Play Silence Can Speak">'+inner+'</div>':'<a class="cd" style="--c:'+col+'" href="'+c.href+'">'+inner+'</a>'}
-function allCards(){var c=SPK.map(function(k){var p=SP[k];return {href:'#s-'+k,img:p.img,t:p.t,sk:p.sk,tm:'1 min',m:ML[p.m],w:p.mf=='own'?'Own':'Spec',l:p.fit,ty:['claude','chatgpt','hindu','hinge'].indexOf(k)>=0?'Case studies':'Ideas'}});
+function allCards(){var c=SPK.map(function(k){var p=SP[k];return {href:'#s-'+k,img:p.ci||p.img,t:p.t,sk:p.sk,tm:'1 min',m:ML[p.m],w:p.mf=='own'?'Own':'Spec',ty:['claude','chatgpt','hindu','hinge'].indexOf(k)>=0?'Case studies':'Ideas'}});
  c.push({f:1,img:'silence-can-speak-poster.jpg',t:'Silence Can Speak',sk:['Film'],tm:'4:47',m:'Global',w:'Own',ty:'Ideas'});
  CMP.forEach(function(m,i){c.push({href:'#out-motion-'+i,img:m[2],t:'“'+m[1]+'”',by:m[0]+' campaign by Motion Sickness',sk:['Copywriting'],tm:'10 secs',m:'Global',w:'Spec',ty:'Ideas'})});
  return c}
@@ -722,9 +742,14 @@ function cardsHTML(){var o=allCards().filter(function(c){return !FIL.length||FIL
  return o.length?o.map(card).join(''):'<p>Nothing matches this filter.</p>'}
 function chipsHTML(){return GRP.map(function(g){return '<div class="gp"><h4>'+g[0]+'</h4>'+g[1].map(function(v){return '<button type="button" class="fb" data-v="'+v+'" aria-pressed="'+(FIL.indexOf(v)>=0)+'" style="--c:'+CLR[v]+'"><i></i>'+v+'</button>'}).join('')+'</div>'}).join('')}
 function profHTML(c){return '<div class="ab '+c+'"><div class="av"><img src="me.jpg" alt="Aditya Verma"></div><div class="pt"><p>99%ile CUET, Delhi University</p><p>Product intern at a VC-backed startup</p><p>1st inter college film</p></div><button type="button" class="tm2" data-open="1">Tell me more →</button></div>'}
-function homeHTML(){return '<div id="cards">'+cardsHTML()+'</div>'+profHTML('pfm')}
+function homeHTML(){return '<div id="cards"></div>'+profHTML('pfm')}
+function fillCards(){var el=$('#cards');if(!el)return;var a=allCards().filter(function(c){return !FIL.length||FIL.indexOf(c.ty)>=0}).map(card);
+ if(!a.length){el.innerHTML='<p>Nothing matches this filter.</p>';return}
+ var n=Math.max(1,Math.floor((el.clientWidth+26)/316)),cols=[],i;for(i=0;i<n;i++)cols.push('');a.forEach(function(h,j){cols[j%n]+=h});
+ el.innerHTML=cols.map(function(c){return '<div class="col">'+c+'</div>'}).join('')}
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(main.classList.contains('hm'))fillCards()},120)});
 function openMd(){var b=['#0b1f4d','#4c1d95','#b0102f','#000'],t=['<b>Creative Direction, copy and strategy</b>'];
- var m=$('#md');m.innerHTML='<div class="mc" role="dialog" aria-modal="true" aria-label="About Aditya"><div class="mh">Aditya Verma</div><div class="mav"><img src="me.jpg" alt="Aditya Verma"></div><button class="mx" type="button" aria-label="Close">×</button><div class="mb"><p class="m1">Netting ideas teams can’t find. Denetting what they can. could.</p><p class="m2">Book for a free gig and ghost this guy (me!), if it ain’t it. lol</p><a class="bk" href="mailto:adityavermaworkid@gmail.com?subject=Free%20gig">Book a free gig</a></div>'+t.map(function(x,i){return '<div class="bn" style="background:'+b[i]+'">'+x+'</div>'}).join('')+'</div>';m.hidden=false;m.querySelector('.mx').focus()}
+ var m=$('#md');m.innerHTML='<div class="mc" role="dialog" aria-modal="true" aria-label="About Aditya"><div class="mh">Aditya Verma</div><div class="mav"><img src="me.jpg" alt="Aditya Verma"></div><button class="mx" type="button" aria-label="Close">×</button><div class="mb"><p class="m1">Netting ideas teams can’t find. Denetting what they can. could.</p><p class="m2">Wanna take advantage of this awesome cheap labour?</p><form id="hi" class="hf"><input type="email" required placeholder="Your email" aria-label="Your email"><button type="submit">Awkward hi</button></form><p class="hn" role="status"></p><p class="m3">(If you don’t like an empty <img class="hi" src="hi.png" alt="Hi">, firstly, why so? Secondly, take the trouble to write me “what you want out of me” at the <a href="mailto:adityavermaworkid@gmail.com">email</a>.)</p></div>'+t.map(function(x,i){return '<div class="bn" style="background:'+b[i]+'">'+x+'</div>'}).join('')+'</div>';m.hidden=false;m.querySelector('.mx').focus()}
 function closeMd(){$('#md').hidden=true}
 var main=$('#main'),sb=$('#sb'),app=$('#app'),cur=null;
 function lk(x){return '<div class="lk">'+x+'</div>'}
@@ -740,21 +765,27 @@ function route(h){
  else if(films){html=FILM;title="Short films — Aditya Verma";cls=" doc wide";sb.innerHTML=lk('<a href="#">← All work</a><a href="#films" class="on">Silence Can Speak</a>')}
  else if(mo){html='<p><a href="#">← All work</a></p>'+MOTION;title="Motion Sickness — Aditya Verma";cls=" wide";ns=true}
  else{html=homeHTML();cls=" hm";sb.innerHTML=chipsHTML()+profHTML('pfd')}
- app.className=ns?"ns":"";main.className="main"+cls;main.innerHTML=html;document.title=title;
+ app.className=ns?"ns":"";main.className="main"+cls;main.innerHTML=html;if(cls==" hm")fillCards();document.title=title;
  window.scrollTo(0,0);
  stopPen();var pw=main.querySelector(".ow");if(pw)startPen(pw,motionPts,true);
  if(mo&&mo[1]!=null){var el=main.querySelectorAll(".oc")[+mo[1]];if(el)setTimeout(function(){window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-24)},60)}
  initDecks()}
 function go(h){try{location.hash=h}catch(e){}route(h)}
-function refresh(){sb.innerHTML=chipsHTML()+profHTML('pfd');$('#cards').innerHTML=cardsHTML()}
-function playFilm(f){if(f.querySelector('video'))return;f.removeAttribute('role');f.innerHTML='<video src="silence-can-speak.mp4" poster="silence-can-speak-poster.jpg" controls autoplay playsinline title="Silence Can Speak"></video>'}
+function refresh(){sb.innerHTML=chipsHTML()+profHTML('pfd');fillCards()}
+function playFilm(f){if(f.querySelector('video'))return;f.style.height=f.offsetHeight+'px';f.removeAttribute('role');f.innerHTML='<video src="silence-can-speak.mp4" poster="silence-can-speak-poster.jpg" controls autoplay playsinline title="Silence Can Speak"></video><a class="rd" href="#films">Read the story →</a>'}
 document.addEventListener("click",function(e){var t=e.target,c=t.closest?t.closest.bind(t):function(){return null};
  if(t.id=="md"||c('.mx')){closeMd();return}
  var b=c('.fb');if(b){var v=b.dataset.v,i=FIL.indexOf(v);if(i<0)FIL.push(v);else FIL.splice(i,1);refresh();return}
  if(c('[data-open]')){openMd();return}
+ var ra=c('a.rd');if(ra){e.preventDefault();go('films');return}
  var f=c('.fc');if(f){playFilm(f);return}
  var a=c('a[href^="#"]');if(a){e.preventDefault();go(a.getAttribute("href").slice(1))}});
 document.addEventListener("keydown",function(e){if(e.key=="Escape")closeMd();var f=e.target.classList&&e.target.classList.contains('fc')&&e.target;if(f&&(e.key=="Enter"||e.key==" ")){e.preventDefault();playFilm(f)}});
+
+var FORM_ENDPOINT='';
+document.addEventListener('submit',function(e){var f=e.target;if(f.id!='hi')return;e.preventDefault();var inp=f.querySelector('input'),em=inp.value.trim(),btn=f.querySelector('button'),note=f.parentNode.querySelector('.hn');
+ if(!FORM_ENDPOINT){location.href='mailto:adityavermaworkid@gmail.com?subject=Hi&body='+encodeURIComponent('Awkward hi.\n\nMy email: '+em);return}
+ btn.disabled=true;fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({email:em,message:'Awkward hi'})}).then(function(r){if(!r.ok)throw 0;note.textContent='Sent.';inp.value=''}).catch(function(){note.textContent='Didn’t send. Try again?'}).then(function(){btn.disabled=false})});
 window.addEventListener("hashchange",function(){route()});
 route();
 </script></body></html>
