@@ -785,10 +785,10 @@ document.addEventListener("click",function(e){var t=e.target,c=t.closest?t.close
  var a=c('a[href^="#"]');if(a){e.preventDefault();go(a.getAttribute("href").slice(1))}});
 document.addEventListener("keydown",function(e){if(e.key=="Escape")closeMd();var f=e.target.classList&&e.target.classList.contains('fc')&&e.target;if(f&&(e.key=="Enter"||e.key==" ")){e.preventDefault();playFilm(f)}});
 
-var FORM_ENDPOINT='';
+var FORM_ENDPOINT='https://formsubmit.co/ajax/adityavermaworkid@gmail.com';
 document.addEventListener('submit',function(e){var f=e.target;if(f.id!='hi')return;e.preventDefault();var inp=f.querySelector('input'),em=inp.value.trim(),btn=f.querySelector('button'),note=f.parentNode.querySelector('.hn');
  if(!FORM_ENDPOINT){location.href='mailto:adityavermaworkid@gmail.com?subject=Hi&body='+encodeURIComponent('Awkward hi.\n\nMy email: '+em);return}
- btn.disabled=true;fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({email:em,message:'Awkward hi'})}).then(function(r){if(!r.ok)throw 0;note.textContent='Sent.';inp.value=''}).catch(function(){note.textContent='Didn’t send. Try again?'}).then(function(){btn.disabled=false})});
+ btn.disabled=true;fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({email:em,message:'Awkward hi',_subject:'Awkward hi',_captcha:'false'})}).then(function(r){if(!r.ok)throw 0;note.textContent='Sent.';inp.value=''}).catch(function(){note.textContent='Didn’t send. Try again?'}).then(function(){btn.disabled=false})});
 window.addEventListener("hashchange",function(){route()});
 route();
 </script></body></html>
