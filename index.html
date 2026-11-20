@@ -12,10 +12,7 @@
 <link rel="prefetch" href="mozart-40-excerpt.mp3">
 <link rel="prefetch" href="ring-of-fire-excerpt.mp3">
 <title>Aditya Verma</title>
-<script>
-(function(){var s=null;try{s=localStorage.getItem("theme")}catch(e){}
-document.documentElement.setAttribute("data-theme",s||(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"))})();
-</script>
+
 <style>
 :root{--bg:#fff;--fg:#000;--mute:rgba(0,0,0,.58);--line:rgba(0,0,0,.14);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme=dark]{--bg:#000;--fg:#fff;--mute:rgba(255,255,255,.62);--line:rgba(255,255,255,.2);color-scheme:dark}
@@ -154,14 +151,65 @@ p.nt{margin:32px 0 10px;font-weight:600}
 @media(max-width:1000px){#top a{padding:11px 12px}}
 @media(max-width:860px){.oc{grid-template-columns:minmax(0,1fr);row-gap:26px;margin-bottom:84px}.oc .of,.oc:nth-child(even) .of{order:-1;position:static}}
 @media(max-width:560px){#top a{padding:8px 4px;font-size:14px}}
+
+html,body{background:#fff;color:#000}
+:root{--cr:#b0102f;--pu:#4c1d95;--nb:#0b1f4d;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--serif:Georgia,"Times New Roman",serif}
+body{font-family:-apple-system,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif}
+#app{display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-rows:auto 1fr;min-height:100vh}
+#app.ns{grid-template-columns:minmax(0,1fr)}#app.ns #sb{display:none}
+#hd{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;padding:22px 28px 14px;border-bottom:2px solid #000;margin-bottom:28px}
+#brand{text-decoration:none;font:700 clamp(26px,3.4vw,38px)/1 var(--serif);letter-spacing:-.03em}#brand span{color:var(--cr)}
+.hr{display:flex;align-items:baseline;gap:20px;font:12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em}.hr i{font-style:normal;color:var(--mute)}.hr a{text-underline-offset:4px;text-decoration-color:var(--cr);text-decoration-thickness:2px}
+#sb{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:0 24px 40px 28px}
+#sb .lk a{display:block;padding:7px 0 7px 10px;border-left:3px solid transparent;color:#555;text-decoration:none;font-weight:500;line-height:1.35}
+#sb .lk a:hover{color:#000}#sb .lk a.on{color:#000;font-weight:700;border-left-color:var(--cr)}
+.gp h4{margin:22px 0 4px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--mute)}
+.fb{display:flex;align-items:center;gap:11px;width:100%;padding:9px 0;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;font-size:15px;color:#000;text-align:left;cursor:pointer}
+.fb i{flex:none;width:12px;height:12px;border:2px solid var(--c)}.fb[aria-pressed=true]{font-weight:700}.fb[aria-pressed=true] i{background:var(--c)}
+.ab{margin-top:30px;padding:22px 10px;background:var(--nb);color:#fff;text-align:center}
+.av{width:84px;height:84px;margin:0 auto 14px;border-radius:50%;border:3px solid var(--cr);overflow:hidden;background:#222}.av img{display:block;width:100%;height:100%;object-fit:cover}
+.pt{margin:0 0 16px;font-size:12.5px;line-height:1.7}.pt p{margin:0;white-space:nowrap}
+.tm2{border:0;background:var(--cr);color:#fff;padding:10px 16px;font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.tm2:hover{background:#fff;color:var(--cr)}
+.main.hm{max-width:none;padding:0 28px 80px 8px}
+#cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:34px 26px}
+.cd{display:block;color:#000;text-decoration:none;cursor:pointer;border:2px solid #000;background:#fff;transition:transform .15s,box-shadow .15s}
+.cd:hover,.cd:focus-visible{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--c)}
+.cd figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;border-bottom:2px solid #000;background:#111}
+.cd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cd img.l{object-position:left}
+.cd video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.cd .tm{position:absolute;left:0;bottom:0;background:#000;color:#fff;padding:6px 10px;font:12px/1 var(--mono)}
+.cd .pp{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:var(--c)}
+.cd .pp:after{content:"";position:absolute;left:23px;top:18px;border:10px solid transparent;border-left:17px solid #fff;border-right:0}
+.cb{padding:14px 16px 16px}
+.sk{display:flex;align-items:center;gap:8px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--c)}.sk i{width:9px;height:9px;background:var(--c)}
+.cd h3{margin:10px 0 0;font:700 21px/1.2 var(--serif);letter-spacing:-.015em}
+.cd .by{margin:6px 0 0;font-size:13.5px;line-height:1.4;color:var(--mute)}
+.cd .mt{margin:12px 0 0;font:11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.pfm{display:none}
+h1{font-family:var(--serif)}.cp{border-left-color:var(--cr)}.lab{color:var(--pu)}h2.hd{border-top:2px solid #000}.sp{border-left-color:var(--pu)}
+.main a{text-decoration-color:var(--cr);text-underline-offset:3px}
+#md{position:fixed;inset:0;z-index:50;background:rgba(11,31,77,.72);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}#md[hidden]{display:none}
+.mc{position:relative;background:#fff;width:min(460px,100%);border:2px solid #000;box-shadow:10px 10px 0 var(--cr);margin:auto}
+.mh{background:var(--pu);color:#fff;height:76px;display:flex;align-items:center;justify-content:center;font:700 22px var(--serif);letter-spacing:.02em}
+.mav{position:relative;width:88px;height:88px;margin:-42px auto 0;border-radius:50%;border:4px solid var(--cr);overflow:hidden;background:#222}.mav img{width:100%;height:100%;object-fit:cover;display:block}
+.mx{position:absolute;top:8px;right:14px;border:0;background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.mb{padding:20px 28px 26px;line-height:1.4}.m1{margin:0 0 16px;font:700 25px/1.25 var(--serif);letter-spacing:-.01em}
+.m2{margin:0 0 20px;font-size:16.5px}.bk{display:block;background:var(--cr);color:#fff;padding:14px;text-align:center;text-decoration:none;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.1em}.bk:hover{background:#000}
+.bn{padding:20px 28px;font-size:18px;line-height:1.3;color:#fff;border-top:2px solid #000}
+
+.cd{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.cd .ty{position:absolute;left:0;top:0;z-index:1;background:var(--c);color:#fff;padding:6px 10px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.cd .tm{z-index:1}.cd .pp{z-index:3}
+.ov{position:absolute;inset:0;padding:46px 18px 44px;background:linear-gradient(rgba(11,31,77,.9),rgba(11,31,77,.82));color:#fff;opacity:0;transition:opacity .18s}
+.cd:hover .ov,.cd:focus-visible .ov{opacity:1}
+.ov h3{margin:0;font:700 22px/1.2 var(--serif);letter-spacing:-.015em;color:#fff}
+.ov .by{margin:8px 0 0;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.85)}
+.ov .mt{margin:14px 0 0;font:11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75)}
+@media(hover:none){.ov{opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 18px 42px;background:linear-gradient(transparent 35%,rgba(11,31,77,.94))}.ov .mt{display:none}}
+@media(max-width:860px){#app{grid-template-columns:minmax(0,1fr)}#hd{padding:16px;margin-bottom:16px}.hr i{display:none}#sb{position:static;max-height:none;padding:0 16px 16px}.pfd{display:none}.pfm{display:block;margin-top:30px}.main.hm{padding:0 16px 60px}#sb .lk{display:flex;overflow-x:auto;gap:14px}#sb .lk a{white-space:nowrap}}
 </style></head><body>
-<div id="grid" class="home">
-<a id="corner" class="on" href="#" aria-current="page"><span class="brand">Aditya Verma</span></a>
-<nav id="top" class="home" aria-label="Sections"><div class="tc"><a href="#cp-0" data-s="cp">Spec Creative Portfolio</a></div><div class="tc"><a href="#films" data-s="films">Short films</a></div><div class="tc"><a href="#out" data-s="out">Outreach</a></div><div class="tc"><a href="#o-0" data-s="o">Others</a></div></nav>
-<nav id="side" class="e" aria-label="Projects"><div class="in"></div></nav>
-<main id="main" class="main"></main>
-<button id="th" type="button"></button>
-</div>
+<div id="app"><header id="hd"><a id="brand" href="#">Aditya Verma<span>.</span></a><div class="hr"><i>Creative portfolio</i><a href="mailto:adityavermaworkid@gmail.com">Email</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">LinkedIn</a></div></header><aside id="sb"></aside><main id="main" class="main"></main></div><div id="md" hidden></div>
 <script>
 var PER=6,LN=['while I am still hirable!','before my next mood swing.','before I realise my rates are not marginally, but exceptionally higher.'];
 function hero(){
@@ -615,42 +663,98 @@ function startPen(w,build,scrl){
  else addEventListener("resize",draw);
  PEN={off:function(){removeEventListener("scroll",onS);removeEventListener("resize",draw);if(ro)ro.disconnect()}}}
 
-var grid=$("#grid"),side=$("#side"),sin=$("#side .in"),main=$("#main"),top_=$("#top"),corner=$("#corner"),cur=null;
-function setTheme(t){document.documentElement.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(e){}
- $("#th").textContent=t=="dark"?"Light":"Dark";$("#th").setAttribute("aria-label","Switch to "+(t=="dark"?"light":"dark")+" mode")}
-$("#th").addEventListener("click",function(){setTheme(document.documentElement.getAttribute("data-theme")=="dark"?"light":"dark")});
-setTheme(document.documentElement.getAttribute("data-theme"));
+var ML={g:'Global',i:'India',u:'US'};
+function S(l,h){return [l,h]}
+var SP={
+claude:{t:'An AI that says “I don’t know” wins trust',key:'cp',sk:['Strategy','Copywriting'],m:'g',mf:'real',full:'#cp-0',spec:1,img:'spec-claude.jpg',alt:'Poster for Claude: a couple lying head to head, with the line We know when we don’t.',s:[
+S('Problem','In October 2026, ChatGPT drew 55.7% of worldwide generative-AI website traffic and Claude 11.5%, according to Similarweb. Claude needs an edge over ChatGPT without giving away its technical identity.'),
+S('Insight','AI confidently hallucinates. Claude is visibly better at saying it doesn’t know. Admitting faults builds trust, whereas constant agreement erodes it.'),
+S('Line','“We know when we don’t.” It echoes Socrates’s “I know that I know nothing.”'),
+S('Scene','A couple lie in bed after a tense moment.<br><br><b>Girlfriend:</b> “Do you think you get defensive, when we talk…talk about things.”<br><br><b>Boyfriend:</b> “I don’t know…yes I do… I always do… I see myself doing it, too.” Then: “I want to change…learn how to change. And I don’t know how to. Do you?”<br><br><b>Girlfriend:</b> “No.. But let’s try.”<br><br>Out of focus, a laptop glows on a desk. Neither of them looks at it. Sign-off: “Keep thinking.” followed by “Trying.”')]},
+chatgpt:{t:'Winners don’t name second winners',key:'cp',sk:['Strategy','Copywriting'],m:'g',mf:'real',full:'#cp-1',spec:1,img:'spec-chatgpt.jpg',alt:'Poster for ChatGPT: a lone photographer on a hill, with the line Your time. Your time isn’t yours.',s:[
+S('Problem','As competition and negative narratives around AI intensify, ChatGPT must strengthen its market leadership while protecting the brand’s public perception.'),
+S('Insight','Don’t fight the “bad cop” image; build on the company’s mission, “AGI for all people’s benefit.” A leader’s real stance is not addressing competitors at all. Aim at power users: hyper-ambitious people, motivated by mission, who pay and promote organically.'),
+S('Line','“Your time isn’t yours.” At first it sounds like a ruler giving orders. It means not slavery to AI, but duty to one’s mission and to society.'),
+S('Scene','A black-and-white montage of people working hard, with rock music under it. Narrator: “Your time isn’t yours. It’s for your mission. Mission is time. Your time isn’t yours. It’s for your society.” ChatGPT logo.<br><br>The repeated phrase is a deliberate echo of the “Problem, problem” repetition in Claude’s Keep Thinking film.')]},
+hindu:{t:'No uncool that cannot be cooled.',key:'cp',sk:['Strategy','Copywriting'],m:'i',mf:'real',full:'#cp-2',spec:1,pt:1,img:'spec-the-hindu.jpg',alt:'Poster for The Hindu: a man reading a newspaper in a dim hall, with the line Newspapers aren’t cool anymore. Their readers always were.',s:[
+S('Problem','Newspapers are seen as an old technology. They take more effort than a phone and are culturally seen as outdated.'),
+S('Insight','People like to associate with cool, aesthetic things. We associate newspapers with uncles, so if the uncle becomes cool, that transfers to The Hindu. Most newspaper brands compete on reliability and trust. The Hindu already owns quality, so it can take the aesthetic of reading a newspaper too.'),
+S('Line','“Newspapers aren’t cool anymore. Their readers always were.”'),
+S('Scene (Film 1, Hindi)','Kids tell an uncle hiding behind a newspaper to check the news on his phone instead. The paper moves aside: lungi, shirt, sunglasses, tea. Uncle: “Beta… when has depth not been cool?” An Instagram-style fan edit of him plays. A kid asks, “Uncle, aap theek toh ho na?”<br><br>Film 2 (newspaper-cutting art) and Film 3 (the uncle on a date) continue the story.')]},
+hinge:{t:'Long form storytelling for a dating app.',key:'cp',sk:['Strategy','Copywriting'],m:'u',mf:'real',full:'#cp-3',spec:1,img:'spec-hinge.jpg',alt:'Poster for Hinge: a smiling woman in a black-and-white double exposure of a street festival.',s:[
+S('Problem','According to SSRS (2026), the share of US adults currently using dating apps fell from 7% in 2025 to 6% in January 2026.'),
+S('Insight','I have no numbers for this, only observation: many people on dating apps have already had a breakup or an infatuation. Apps point only to the future, though the past stays heavy. A mild melancholy can show love as a continuous chain rather than cuts, and speak to what neither person on a date says aloud.'),
+S('Line','“See me in everyone and know that I am happy for you.” The first half is love continuing. The second half is an assurance of well-being, as if to an ex.'),
+S('Scene','Chloe, back from a trip with friends, reads a letter in voice-over over photos of the trip. It opens: “Did we die? We didn’t. We both know it.” It closes: “Know that I see you in everyone and I know that you are happy for me.” Her friends start reading it too. Hinge logo.')]},
+airbnb:{t:'Why photos beat 5-star reviews on Airbnb Experiences',key:'o',sk:['Business analysis'],m:'i',mf:'real',full:'#o-0',fit:1,img:'airbnb-cooking-photos.jpg',alt:'Foreign guests cooking and eating with a Delhi host. Courtesy @explorerealindia.',s:[
+S('What I did','A product teardown of Airbnb Experiences, a vertical inside the lodging business that gives existing guests more to book. The core user is a foreign tourist staying in Delhi or Gurugram. I looked at friends travelling together and split them by how they book: the deliberate planner, the intuitive selector and the impulse adventurer.'),
+S('What I found','I walked through choosing a home-cooking host near Delhi, as a foreigner would. Clear, high-quality photos of earlier foreign guests win the first impression. They suggest no language barrier, safety and cultural understanding. Written reviews only confirm that trust, and almost every host has 5 stars, often given out of courtesy.'),
+S('What I’d do next','<ul><li>Offer stay and experience as one discounted package.</li><li>Train good hosts, and give them exclusive deals in return.</li><li>Let guests rate language and cultural knowledge separately.</li><li>Add video reviews, so safety is easier to verify.</li></ul>The main metric would be total Experience bookings, with user ratings as the quality check.')]},
+zomato:{t:'Five interviews, one problem: life after you hit order',key:'o',sk:['Research'],m:'i',mf:'real',full:'#o-1',fit:1,img:'zomato-empathy-map.jpg',alt:'Empathy map from one Zomato interview: says, thinks, does, feels.',s:[
+S('What I did','Five one-hour, one-on-one interviews with students and early-career professionals. For the first 80% of each, I let the person lead and tell their own stories. Only at the end did I show the idea I was testing: a faster Zomato checkout that skips the home page, with an opt-out.'),
+S('What I found','All four active users raised delivery problems without being asked: the app not showing where the order is, drivers and restaurants not doing what they promised, and poor coordination between all three. Chatbots gave false reassurance. One person said: “8 out of every 15–16 orders I place are frustrating.” The fifth person doesn’t order online at all, because of price, family habit and never having started.<br><br>The quick-checkout idea got a hesitant yes from almost everyone.'),
+S('What I’d do next','Test it with real users in a narrower group first. Zomato can’t fix drivers directly, but clearer updates after the order can still ease the worry people feel.')]},
+dont:{t:'A makeup brand that wins by selling less',key:'o',sk:['Brand'],m:'i',mf:'own',full:'#o-2',img:'dont-billboard.jpg',alt:'DON’T jar billboard at Pennsylvania Station.',s:[
+S('Problem','The makeup industry doesn’t address the western overconsumption framing of beauty. Women end up with more insecurity, even while using the product meant to fix it.'),
+S('Insight','A brand that takes the loss by not selling heavy makeup doesn’t preach its values, it shows them. That position can’t be faked. Clean brands like Minimalist differentiate on ingredients. DON’T differentiates on the psychology of using makeup and on its philosophy.'),
+S('Idea','“Negation before addition,” close to Advaita Vedanta’s “neti-neti” and Taleb’s “via negativa”: remove the wrong before adding what we think is good. Makeup becomes a “touchup” on what is already beautiful in you, not a transformation. The name makes people take a side, which is the point, since it asks them to look at their own choices.'),
+S('Lines','<ul><li>“DON’T buy our makeup if it makes you feel you are nothing without it.”</li><li>“Unfortunately for DON’T customers: exercise, diet and sleep before makeup.”</li></ul>')]}
+};
+var SPK=['claude','chatgpt','hindu','hinge','airbnb','zomato','dont'];
+function spHTML(k){var p=SP[k];
+ return '<h1>'+p.t+'</h1><span class="tag">'+(p.m=='i'?CHAKRA:GLOBE)+ML[p.m]+' market · '+p.sk.join(', ')+' · 1 min read'+(p.spec?' · Spec':'')+'</span>'+
+ p.s.map(function(x){return '<div class="lb"><span class="lab">'+x[0]+'.</span>'+x[1]+'</div>'}).join('')+
+ '<p><a href="'+p.full+'">Read the full version →</a></p>'+
+ '<figure class="fg'+(p.pt?' pt':'')+'"><img src="'+p.img+'" alt="'+p.alt+'" onerror="this.parentNode.hidden=true"></figure>'}
+function spSide(k){return '<a href="#">← All work</a>'+SPK.map(function(j){return '<a href="#s-'+j+'"'+(j==k?' class="on" aria-current="page"':'')+'>'+SP[j].t.slice(0,44)+(SP[j].t.length>44?'…':'')+'</a>'}).join('')}
+var CMP=[['Kathmandu','Home is Outside.','motion-kathmandu.jpg'],['Karangahape Road','Smell, bite, chew and swallow.','motion-karangahape.jpg'],['Griffin’s','Kiwis need a biscuit.','motion-griffins.jpg'],['Heart of the City','JOJI. $127-$208 per person. 7PM','motion-heart-of-the-city.jpg'],['Les Mills','Only the first step, unlocks the second.','motion-les-mills.jpg']];
+var FIL=[],CLR={'Case studies':'#b0102f',Ideas:'#4c1d95'};
+var GRP=[['Work',['Case studies','Ideas']]];
+var BULB='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg>';
+function card(c){var cs=c.ty=='Case studies',col=cs?'#b0102f':'#4c1d95',
+ inner='<img'+(c.l?' class="l"':'')+' src="'+c.img+'" alt="" loading="lazy" onerror="this.remove()"><span class="ty">'+(cs?'Case study':'Idea')+'</span><span class="tm">'+c.tm+'</span>'+(c.f?'<span class="pp"></span>':'')+'<div class="ov"><h3>'+c.t+'</h3>'+(c.by?'<p class="by">'+c.by+'</p>':'')+'<p class="mt">'+c.sk.join(', ')+' · '+c.m+' · '+c.w+'</p></div>';
+ return c.f?'<div class="cd fc" style="--c:'+col+'" role="button" tabindex="0" aria-label="Play Silence Can Speak">'+inner+'</div>':'<a class="cd" style="--c:'+col+'" href="'+c.href+'">'+inner+'</a>'}
+function allCards(){var c=SPK.map(function(k){var p=SP[k];return {href:'#s-'+k,img:p.img,t:p.t,sk:p.sk,tm:'1 min',m:ML[p.m],w:p.mf=='own'?'Own':'Spec',l:p.fit,ty:['claude','chatgpt','hindu','hinge'].indexOf(k)>=0?'Case studies':'Ideas'}});
+ c.push({f:1,img:'silence-can-speak-poster.jpg',t:'Silence Can Speak',sk:['Film'],tm:'4:47',m:'Global',w:'Own',ty:'Ideas'});
+ CMP.forEach(function(m,i){c.push({href:'#out-motion-'+i,img:m[2],t:'“'+m[1]+'”',by:m[0]+' campaign by Motion Sickness',sk:['Copywriting'],tm:'10 secs',m:'Global',w:'Spec',ty:'Ideas'})});
+ return c}
+function cardsHTML(){var o=allCards().filter(function(c){return !FIL.length||FIL.indexOf(c.ty)>=0});
+ return o.length?o.map(card).join(''):'<p>Nothing matches this filter.</p>'}
+function chipsHTML(){return GRP.map(function(g){return '<div class="gp"><h4>'+g[0]+'</h4>'+g[1].map(function(v){return '<button type="button" class="fb" data-v="'+v+'" aria-pressed="'+(FIL.indexOf(v)>=0)+'" style="--c:'+CLR[v]+'"><i></i>'+v+'</button>'}).join('')+'</div>'}).join('')}
+function profHTML(c){return '<div class="ab '+c+'"><div class="av"><img src="me.jpg" alt="Aditya Verma"></div><div class="pt"><p>99%ile CUET, Delhi University</p><p>Product intern at a VC-backed startup</p><p>1st inter college film</p></div><button type="button" class="tm2" data-open="1">Tell me more →</button></div>'}
+function homeHTML(){return '<div id="cards">'+cardsHTML()+'</div>'+profHTML('pfm')}
+function openMd(){var b=['#0b1f4d','#4c1d95','#b0102f','#000'],t=['<b>Creative Direction, copy and strategy</b>'];
+ var m=$('#md');m.innerHTML='<div class="mc" role="dialog" aria-modal="true" aria-label="About Aditya"><div class="mh">Aditya Verma</div><div class="mav"><img src="me.jpg" alt="Aditya Verma"></div><button class="mx" type="button" aria-label="Close">×</button><div class="mb"><p class="m1">Netting ideas teams can’t find. Denetting what they can. could.</p><p class="m2">Book for a free gig and ghost this guy (me!), if it ain’t it. lol</p><a class="bk" href="mailto:adityavermaworkid@gmail.com?subject=Free%20gig">Book a free gig</a></div>'+t.map(function(x,i){return '<div class="bn" style="background:'+b[i]+'">'+x+'</div>'}).join('')+'</div>';m.hidden=false;m.querySelector('.mx').focus()}
+function closeMd(){$('#md').hidden=true}
+var main=$('#main'),sb=$('#sb'),app=$('#app'),cur=null;
+function lk(x){return '<div class="lk">'+x+'</div>'}
 function route(h){
  if(typeof h!="string")h=(location.hash||"").slice(1);
  if(h===cur)return;cur=h;
- var m=/^(cp|o)-(\d+)$/.exec(h),sec=m&&m[1],i=m?+m[2]:-1,it=sec&&D[sec][i],films=h=="films";
- if(!it)sec=null;
- var out=h=="out"||h=="out-motion",key=sec||(films?"films":(out?"out":"")),wide=false,html,title="Aditya Verma";
+ var m=/^(cp|o)-(\d+)$/.exec(h),sec=m&&m[1],i=m?+m[2]:-1,it=sec&&D[sec][i],sm=/^s-([a-z]+)$/.exec(h),sp=sm&&SP[sm[1]],mo=/^out-motion(?:-(\d))?$/.exec(h),films=h=="films",html,title="Aditya Verma",cls="",ns=false;
  if(it){
   html="<h1>"+esc(it.n)+"</h1>"+(it.sub?'<p class="sub">'+esc(it.sub)+"</p>":"")+(it.m?'<span class="tag">'+(it.m=="i"?CHAKRA+"Indian market":it.m=="u"?GLOBE+"US market":GLOBE+"Global market")+"</span>":'<div style="height:24px"></div>')+lines(it.L);
-  wide=/g\|/.test(it.L);title=it.n+" — Aditya Verma";
-  sin.innerHTML=D[sec].map(function(p,j){return '<a href="#'+sec+"-"+j+'"'+(j==i?' class="on" aria-current="page"':"")+">"+esc(p.n)+"</a>"}).join("");
-  side.className=""
- }else{
-  sin.innerHTML="";side.className="e";
-  if(films){html=FILM;wide=true;title="Short films — Aditya Verma";
-   sin.innerHTML='<a href="#films" class="on" aria-current="page">Silence Can Speak</a>';side.className=""}
-  else if(h=="out"){html=OUT;title="Outreach — Aditya Verma"}
-  else if(out){html=MOTION;wide=true;title="Motion Sickness — Aditya Verma"}
-  else html=HOME
- }
- main.className="main"+(wide?" wide":"")+((it||films)?" doc":"")+((it&&/(^|\n)f\|/.test(it.L))?" pz":"");main.innerHTML=html;document.title=title;
- grid.className=key?"":"home";top_.className=key?"":"home";
- corner.classList.toggle("on",!key);if(key)corner.removeAttribute("aria-current");else corner.setAttribute("aria-current","page");
- top_.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.s==key)});
+  title=it.n+" — Aditya Verma";cls=" doc"+(/(^|\n)f\|/.test(it.L)?" pz":"")+(/g\|/.test(it.L)?" wide":"");
+  sb.innerHTML=lk('<a href="#">← All work</a>'+D[sec].map(function(p,j){return '<a href="#'+sec+"-"+j+'"'+(j==i?' class="on" aria-current="page"':"")+">"+esc(p.n)+"</a>"}).join(""))
+ }else if(sp){html=spHTML(sm[1]);title=sp.t+" — Aditya Verma";cls=" doc pz";sb.innerHTML=lk(spSide(sm[1]))}
+ else if(films){html=FILM;title="Short films — Aditya Verma";cls=" doc wide";sb.innerHTML=lk('<a href="#">← All work</a><a href="#films" class="on">Silence Can Speak</a>')}
+ else if(mo){html='<p><a href="#">← All work</a></p>'+MOTION;title="Motion Sickness — Aditya Verma";cls=" wide";ns=true}
+ else{html=homeHTML();cls=" hm";sb.innerHTML=chipsHTML()+profHTML('pfd')}
+ app.className=ns?"ns":"";main.className="main"+cls;main.innerHTML=html;document.title=title;
  window.scrollTo(0,0);
- stopPen();var pw=main.querySelector(".ow");if(pw)startPen(pw,h=="out"?outPts:motionPts,h!="out");
- var bk=h=="out-motion";corner.setAttribute("href",bk?"#out":"#");corner.querySelector(".brand").textContent=bk?"← Back":"Aditya Verma";if(bk)corner.setAttribute("aria-label","Back to Outreach");else corner.removeAttribute("aria-label");
+ stopPen();var pw=main.querySelector(".ow");if(pw)startPen(pw,motionPts,true);
+ if(mo&&mo[1]!=null){var el=main.querySelectorAll(".oc")[+mo[1]];if(el)setTimeout(function(){window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-24)},60)}
  initDecks()}
 function go(h){try{location.hash=h}catch(e){}route(h)}
-document.addEventListener("click",function(e){
- var a=e.target.closest&&e.target.closest('a[href^="#"]');
- if(!a)return;e.preventDefault();go(a.getAttribute("href").slice(1))});
+function refresh(){sb.innerHTML=chipsHTML()+profHTML('pfd');$('#cards').innerHTML=cardsHTML()}
+function playFilm(f){if(f.querySelector('video'))return;f.removeAttribute('role');f.innerHTML='<video src="silence-can-speak.mp4" poster="silence-can-speak-poster.jpg" controls autoplay playsinline title="Silence Can Speak"></video>'}
+document.addEventListener("click",function(e){var t=e.target,c=t.closest?t.closest.bind(t):function(){return null};
+ if(t.id=="md"||c('.mx')){closeMd();return}
+ var b=c('.fb');if(b){var v=b.dataset.v,i=FIL.indexOf(v);if(i<0)FIL.push(v);else FIL.splice(i,1);refresh();return}
+ if(c('[data-open]')){openMd();return}
+ var f=c('.fc');if(f){playFilm(f);return}
+ var a=c('a[href^="#"]');if(a){e.preventDefault();go(a.getAttribute("href").slice(1))}});
+document.addEventListener("keydown",function(e){if(e.key=="Escape")closeMd();var f=e.target.classList&&e.target.classList.contains('fc')&&e.target;if(f&&(e.key=="Enter"||e.key==" ")){e.preventDefault();playFilm(f)}});
 window.addEventListener("hashchange",function(){route()});
 route();
 </script></body></html>
