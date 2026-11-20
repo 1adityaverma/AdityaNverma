@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<!-- Background prefetch: starts on home so film, decks and audio are cached before visitors open them -->
+<link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" as="script" crossorigin>
+<link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js" as="script" crossorigin>
+<link rel="prefetch" href="airbnb-experiences-teardown.pdf">
+<link rel="prefetch" href="zomato-qualitative-research.pdf">
+<link rel="prefetch" href="silence-can-speak-poster.jpg">
+<link rel="prefetch" href="silence-can-speak.mp4">
+<link rel="prefetch" href="mozart-40-excerpt.mp3">
+<link rel="prefetch" href="ring-of-fire-excerpt.mp3">
+<title>Aditya Verma</title>
+
+<style>
+:root{--bg:#fff;--fg:#000;--mute:rgba(0,0,0,.58);--line:rgba(0,0,0,.14);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=dark]{--bg:#000;--fg:#fff;--mute:rgba(255,255,255,.62);--line:rgba(255,255,255,.2);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* skeleton: the lines of the sketch */
+:root{--rule:rgba(0,0,0,.5)}
+:root[data-theme=dark]{--rule:rgba(255,255,255,.55)}
+#grid{position:relative;display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-rows:136px 1fr;min-height:100vh}
+#corner{position:relative;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:14px 30px;text-decoration:none;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.brand{font-weight:400;letter-spacing:-.01em;line-height:1.3;color:var(--mute)}
+#corner:hover .brand{color:var(--fg)}
+#corner.on .brand{font-weight:700;color:var(--fg)}
+#top{display:flex;align-items:stretch;border-bottom:1px solid var(--rule)}
+#top .tc{display:flex;align-items:center;justify-content:center;padding:0 clamp(12px,2vw,30px);border-right:1px solid var(--rule)}
+#top a,#side a{display:block;text-decoration:none;color:var(--mute);line-height:1.35}
+#top a{padding:11px 24px}
+#top a:hover,#side a:hover{color:var(--fg)}
+#top a.on,#side a.on{color:var(--fg);font-weight:700}
+#side{border-right:1px solid var(--rule)}
+#side .in{position:sticky;top:0;padding:16px 0}
+#side a{margin:6px 30px;padding:6px 0}
+#side .note{margin:10px 30px 0;font-size:13.5px;line-height:1.5;color:var(--mute)}
+/* home: word-by-word rotating copy, normal size */
+.hero{display:flex;align-items:flex-start;gap:.3em;margin:0 0 36px;font-size:17px;line-height:1.75}
+.hero .constant{margin:0;white-space:nowrap}
+.hero .stack{flex:1;min-width:0}
+.stack{display:grid}
+.stack .line{grid-area:1/1;margin:0}
+.mask{display:inline-block;overflow:hidden;vertical-align:top}
+.word{display:inline-block;transform:translateY(110%);animation:wd 18s cubic-bezier(.2,.7,.2,1) infinite both}
+@keyframes wd{0%{transform:translateY(110%)}3%{transform:translateY(0)}29%{transform:translateY(0)}32%,100%{transform:translateY(-110%)}}
+.intro{margin:0 0 20px;max-width:640px;font-size:17px;line-height:1.75}
+#th{position:absolute;top:0;right:clamp(16px,3vw,40px);height:136px;display:flex;align-items:center;font:inherit;font-size:15px;color:var(--mute);background:none;border:0;padding:0;cursor:pointer}
+#th:hover{color:var(--fg)}
+.main{padding:56px clamp(20px,5vw,64px) 120px;max-width:760px}
+.main.wide{max-width:1040px}
+h1{font-size:clamp(28px,4vw,42px);font-weight:600;letter-spacing:-.025em;line-height:1.12;margin:0 0 14px}
+.sub{margin:0 0 20px;color:var(--mute);font-size:18px}
+.tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 40px;font-size:14px;color:var(--mute);line-height:1}
+.tag svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round}
+h2.hd{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.3;margin:64px 0 22px;padding-top:20px;border-top:1px solid var(--line)}
+p{margin:0 0 22px}
+/* project pages: one reading column, one rhythm */
+.doc>p,.doc>h2.hd,.doc>.cp,.doc>.lb{max-width:36em}
+.doc>p{line-height:1.75}
+.cp{margin:0 0 48px;padding:2px 0 2px 22px;border-left:3px solid var(--fg)}
+.cp p{margin:0;font-size:21px;font-weight:500;line-height:1.5;letter-spacing:-.01em}
+.lab{display:block;margin:0 0 2px;font-size:17px;font-weight:600;line-height:1.7;color:var(--fg)}
+.lb{margin:0 0 30px;line-height:1.75}
+p b{font-weight:600}
+p.q{font-size:24px;font-weight:600;line-height:1.35;letter-spacing:-.01em;margin:0 0 20px}
+p.nt{margin:32px 0 10px;font-weight:600}
+.ct{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;color:var(--mute)}
+.ct a:hover{color:var(--fg)}
+/* screenplay */
+.sp{font-family:"Courier Prime","Courier New",Courier,monospace;font-size:18px;line-height:1.65;border-left:1px solid var(--line);padding:4px 0 4px 24px;margin:20px 0 28px}
+.sp p{margin:0 0 12px}
+.sp .s{font-weight:700;margin-top:26px}
+.sp .c{margin:20px 0 0 36%}
+.sp .p{margin:0 0 0 28%}
+.sp .d{margin:0 8% 12px 20%}
+@media(max-width:560px){.cp{padding-left:16px;margin-bottom:36px}.cp p{font-size:19px}.sp{font-size:16px;padding-left:14px}.sp .c{margin-left:28%}.sp .p{margin-left:20%}.sp .d{margin:0 2% 12px 10%}}
+/* audio */
+.au{margin:8px 0 28px}
+.au figcaption{font-size:14px;color:var(--mute);margin:0 0 8px}
+.au audio{display:block;width:100%;max-width:420px;height:40px}
+/* pdf decks */
+.hint{margin:0 0 18px;font-size:14px;color:var(--mute)}
+.deck{display:flex;flex-direction:column;gap:20px;margin:0 0 28px;min-height:120px}
+.deck .dk{margin:0;font-size:15px;color:var(--mute)}
+.deck iframe.pf{width:100%;height:80vh;border:1px solid var(--line);background:#fff}
+.sl{position:relative;background:#fff;border:1px solid var(--line)}
+.sl canvas{display:block;width:100%;height:auto}
+.sl a.ov{position:absolute;display:block;cursor:pointer}
+/* campaign poster */
+.doc>.fg{max-width:36em;margin:6px 0 40px}
+.fg img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.doc>.fg.pt{max-width:24em}
+.main.pz{max-width:1200px}
+.main.pz.doc{display:grid;grid-template-columns:minmax(0,36em) minmax(0,1fr);column-gap:clamp(32px,5vw,72px);align-items:start}
+.main.pz>*{grid-column:1}
+.main.pz>.fg{grid-column:2;grid-row:1/span 200;position:sticky;top:24px;margin:0;max-width:none}
+.main.pz>.fg.pt{max-width:380px}
+@media(max-width:900px){.main.pz.doc{display:block}.main.pz>.fg{position:static;max-width:36em;margin:6px 0 40px}.main.pz>.fg.pt{max-width:24em}}
+/* film */
+.vf{display:block;width:100%;aspect-ratio:16/9;background:#000;margin:0 0 36px}
+@media(max-width:760px){
+ #grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+ #corner{padding:22px 76px 22px 22px;border-right:0}
+ #top .tc{flex:1;padding:0 4px;min-height:60px}
+ #top a{padding:8px 10px;text-align:center;font-size:15px}
+ #top .tc:last-child{border-right:0}
+ #side{border-right:0;border-bottom:1px solid var(--rule)}
+ #side.e{display:none}
+ #side .in{position:static;display:flex;overflow-x:auto;padding:8px 10px}
+ #side a{white-space:nowrap;margin:4px 14px 4px 12px}
+ #side .note{white-space:nowrap;margin:0 12px;align-self:center}
+ #th{height:auto;top:18px}
+ .main{padding-top:36px}
+}
+@media(prefers-reduced-motion:reduce){.word{animation:none;transform:none}.stack .line+.line{display:none}}
+/* outreach */
+.ow{position:relative}
+.osv{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.pl{fill:none;stroke:var(--fg);stroke-linecap:round;stroke-linejoin:round}
+.pl.a{stroke-width:2;opacity:.8}
+.pl.b{stroke-width:1;opacity:.45;transform:translate(.9px,.7px)}
+.pd{fill:var(--fg);opacity:.8}
+.main h1.oh{margin:0 0 44px}
+.ol{margin:64px 0 0}
+.ow.l{padding-bottom:100px}
+.ms{margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.ms a{text-underline-offset:4px}
+.oa{display:block;width:max-content;max-width:100%;font-size:clamp(26px,3.6vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.25;text-decoration:none;padding:2px 0 8px;margin:0 0 34px}
+.od{margin:0;max-width:30em;font:italic 13.5px/1.6 Georgia,"Times New Roman",serif;color:var(--mute)}
+.ow.m{padding-bottom:110px}
+.oc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:72px;align-items:start;margin:0 0 120px}
+.oc:last-child{margin-bottom:0}
+.oc:nth-child(even) .of{order:-1}
+.of{position:sticky;top:24px;margin:0}
+.of img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.ob h2{margin:0 0 18px;font-size:24px;font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.ob h2 a{text-decoration:none}
+.ob h2 .ar{color:var(--mute);font-weight:400}
+.ob .lab{margin:28px 0 4px}
+.ob ul{margin:0 0 22px;padding-left:1.15em}
+.ob li{margin:0 0 6px}
+.ob .cp{margin:6px 0 26px}
+.ob .cp small{display:block;margin:0 0 2px;font-size:14px;line-height:1.5;color:var(--mute)}
+.ob p:last-child,.ob ul:last-child{margin-bottom:0}
+@media(max-width:1000px){#top a{padding:11px 12px}}
+@media(max-width:860px){.oc{grid-template-columns:minmax(0,1fr);row-gap:26px;margin-bottom:84px}.oc .of,.oc:nth-child(even) .of{order:-1;position:static}}
+@media(max-width:560px){#top a{padding:8px 4px;font-size:14px}}
+
+html,body{background:#fff;color:#000}
+:root{--cr:#b0102f;--pu:#4c1d95;--nb:#0b1f4d;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--serif:Georgia,"Times New Roman",serif}
+body{font-family:-apple-system,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif}
+#app{display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-rows:auto 1fr;min-height:100vh}
+#app.ns{grid-template-columns:minmax(0,1fr)}#app.ns #sb{display:none}
+#hd{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;padding:22px 28px 14px;border-bottom:2px solid #000;margin-bottom:28px}
+#brand{text-decoration:none;font:700 clamp(26px,3.4vw,38px)/1 var(--serif);letter-spacing:-.03em}#brand span{color:var(--cr)}
+.hr{display:flex;align-items:baseline;gap:20px;font:12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em}.hr i{font-style:normal;color:var(--mute)}.hr a{text-underline-offset:4px;text-decoration-color:var(--cr);text-decoration-thickness:2px}
+#sb{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:0 24px 40px 28px}
+#sb .lk a{display:block;padding:7px 0 7px 10px;border-left:3px solid transparent;color:#555;text-decoration:none;font-weight:500;line-height:1.35}
+#sb .lk a:hover{color:#000}#sb .lk a.on{color:#000;font-weight:700;border-left-color:var(--cr)}
+.gp h4{margin:22px 0 4px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--mute)}
+.fb{display:flex;align-items:center;gap:11px;width:100%;padding:9px 0;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;font-size:15px;color:#000;text-align:left;cursor:pointer}
+.fb i{flex:none;width:12px;height:12px;border:2px solid var(--c)}.fb[aria-pressed=true]{font-weight:700}.fb[aria-pressed=true] i{background:var(--c)}
+.ab{margin-top:30px;padding:22px 10px;background:var(--nb);color:#fff;text-align:center}
+.av{width:84px;height:84px;margin:0 auto 14px;border-radius:50%;border:3px solid var(--cr);overflow:hidden;background:#222}.av img{display:block;width:100%;height:100%;object-fit:cover}
+.pt{margin:0 0 16px;font-size:12.5px;line-height:1.7}.pt p{margin:0;white-space:nowrap}
+.tm2{border:0;background:var(--cr);color:#fff;padding:10px 16px;font:700 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.tm2:hover{background:#fff;color:var(--cr)}
+.main.hm{max-width:none;padding:0 28px 80px 8px}
+#cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:34px 26px}
+.cd{display:block;color:#000;text-decoration:none;cursor:pointer;border:2px solid #000;background:#fff;transition:transform .15s,box-shadow .15s}
+.cd:hover,.cd:focus-visible{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--c)}
+.cd figure{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;border-bottom:2px solid #000;background:#111}
+.cd img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cd img.l{object-position:left}
+.cd video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.cd .tm{position:absolute;left:0;bottom:0;background:#000;color:#fff;padding:6px 10px;font:12px/1 var(--mono)}
+.cd .pp{position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:var(--c)}
+.cd .pp:after{content:"";position:absolute;left:23px;top:18px;border:10px solid transparent;border-left:17px solid #fff;border-right:0}
+.cb{padding:14px 16px 16px}
+.sk{display:flex;align-items:center;gap:8px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--c)}.sk i{width:9px;height:9px;background:var(--c)}
+.cd h3{margin:10px 0 0;font:700 21px/1.2 var(--serif);letter-spacing:-.015em}
+.cd .by{margin:6px 0 0;font-size:13.5px;line-height:1.4;color:var(--mute)}
+.cd .mt{margin:12px 0 0;font:11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--mute)}
+.pfm{display:none}
+h1{font-family:var(--serif)}.cp{border-left-color:var(--cr)}.lab{color:var(--pu)}h2.hd{border-top:2px solid #000}.sp{border-left-color:var(--pu)}
+.main a{text-decoration-color:var(--cr);text-underline-offset:3px}
+#md{position:fixed;inset:0;z-index:50;background:rgba(11,31,77,.72);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}#md[hidden]{display:none}
+.mc{position:relative;background:#fff;width:min(460px,100%);border:2px solid #000;box-shadow:10px 10px 0 var(--cr);margin:auto}
+.mh{background:var(--pu);color:#fff;height:76px;display:flex;align-items:center;justify-content:center;font:700 22px var(--serif);letter-spacing:.02em}
+.mav{position:relative;width:88px;height:88px;margin:-42px auto 0;border-radius:50%;border:4px solid var(--cr);overflow:hidden;background:#222}.mav img{width:100%;height:100%;object-fit:cover;display:block}
+.mx{position:absolute;top:8px;right:14px;border:0;background:none;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+.mb{padding:20px 28px 26px;line-height:1.4}.m1{margin:0 0 16px;font:700 25px/1.25 var(--serif);letter-spacing:-.01em}
+.m2{margin:0 0 20px;font-size:16.5px}.bk{display:block;background:var(--cr);color:#fff;padding:14px;text-align:center;text-decoration:none;font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.1em}.bk:hover{background:#000}
+.bn{padding:20px 28px;font-size:18px;line-height:1.3;color:#fff;border-top:2px solid #000}
+
+.cd{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.cd .ty{position:absolute;left:0;top:0;z-index:1;background:var(--c);color:#fff;padding:6px 10px;font:700 11px/1 var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.cd .tm{z-index:1}.cd .pp{z-index:3}
+.ov{position:absolute;inset:0;padding:46px 18px 44px;background:linear-gradient(rgba(11,31,77,.9),rgba(11,31,77,.82));color:#fff;opacity:0;transition:opacity .18s}
+.cd:hover .ov,.cd:focus-visible .ov{opacity:1}
+.ov h3{margin:0;font:700 22px/1.2 var(--serif);letter-spacing:-.015em;color:#fff}
+.ov .by{margin:8px 0 0;font-size:13.5px;line-height:1.4;color:rgba(255,255,255,.85)}
+.ov .mt{margin:14px 0 0;font:11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.75)}
+@media(hover:none){.ov{opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 18px 42px;background:linear-gradient(transparent 35%,rgba(11,31,77,.94))}.ov .mt{display:none}}
+@media(max-width:860px){#app{grid-template-columns:minmax(0,1fr)}#hd{padding:16px;margin-bottom:16px}.hr i{display:none}#sb{position:static;max-height:none;padding:0 16px 16px}.pfd{display:none}.pfm{display:block;margin-top:30px}.main.hm{padding:0 16px 60px}#sb .lk{display:flex;overflow-x:auto;gap:14px}#sb .lk a{white-space:nowrap}}
+</style></head><body>
+<div id="app"><header id="hd"><a id="brand" href="#">Aditya Verma<span>.</span></a><div class="hr"><i>Creative portfolio</i><a href="mailto:adityavermaworkid@gmail.com">Email</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">LinkedIn</a></div></header><aside id="sb"></aside><main id="main" class="main"></main></div><div id="md" hidden></div>
+<script>
+var PER=6,LN=['while I am still hirable!','before my next mood swing.','before I realise my rates are not marginally, but exceptionally higher.'];
+function hero(){
+ var s=LN.map(function(t,k){var i=0;return '<p class="line">'+t.split(' ').map(function(w){return '<span class="mask"><span class="word" style="animation-delay:'+(k*PER+i++*0.03).toFixed(2)+'s">'+esc(w)+'</span></span>'}).join(' ')+'</p>'}).join('');
+ return '<p class="vh">Hire me, '+LN.join(' ')+'</p><div class="hero" aria-hidden="true"><p class="constant">Hire me,</p><div class="stack">'+s+'</div></div>'}
+var HOME=hero()+'<p class="intro">I am Aditya Verma. Graduated from Ramjas, Delhi University, with bachelors of arts in Economics and Philosophy 2026. Loved making short films with friends, and writing fever dreams on paper.</p><p class="intro">I have interned at a VC backed startup for a product associate role. I am interested in creative copy and strategy, both aren’t mutually exclusive in my opinion.</p><p class="intro">I love to think what others think and what I think. And what’s not real, but real in the sense that isn’t mentioned, outrightly.</p>'+'<div class="ct"><a href="mailto:adityavermaworkid@gmail.com">adityavermaworkid@gmail.com</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">linkedin.com/in/adityanverma</a></div>';
+
+var FILM=`<video class="vf" id="fv" src="silence-can-speak.mp4" controls playsinline preload="none" poster="silence-can-speak-poster.jpg" title="Silence Can Speak"></video><h1>Silence Can Speak.</h1><p>After winning a short film in an intercollegiate, the human vice called “ambition” took over me. And I soon convinced the team to make another one, because it was aching not to. And I learned, passion is contagious. Or to be precise, my passion.</p><p>We shot it in a day inside the campus, skipping our classes and I edited and surprised the team with the final product the next day. We shared it amongst friends, who we thought wouldn’t dismiss the idea of silent black and white, experimental film at the first glance.</p><p>One of them, stating ”What in the Slavic art film is this. Brilliant. It’s about expression. An aura of expression emanates from the character but is invisible to others. The world around him brings it out and because of that in a way sees the inanimate world does see it. Things complement it but nothing reacts to it. Mimesis of colorfulness in black and white.”</p><p>At the end, we were happy. With the fact that something can be done. At least, something.</p>`;
+
+var D={cp:[
+{n:"Claude",m:"g",L:`
+t|Chosen Problem: “In October 2026, ChatGPT drew 55.7% of worldwide generative-AI website traffic and Claude 11.5%, according to Similarweb. Claude is consistently grabbing the lesser part of the pie, especially with general non tech population. It needs an edge over ChatGPT; without giving away its niche technical identity.
+t|Strategy: AI confidently hallucinates and gives a wrong answer. Claude is visibly better than ChatGPT at saying that it doesn’t know, and that it is only guessing on highly uncertain topics. A clear important differentiation, and it should be highlighted.
+t|Creative Insight: Admitting faults builds trust, whereas constant agreement (“yes-manning”) tends to erode it. If AI can demonstrate this kind of honesty, people will likely trust it more over time.
+t|Solution: Tagline- “We know when we don’t,” coining Socrates’s “I know that I know nothing,” signifying self-awareness and limitations, rather than deluding folks.
+f|spec-claude.jpg|Poster for Claude: a couple lying head to head on teal sheets, with the line We know when we don’t.
+n|Script theme
+t|By showing everyday scenarios where the response starts with “I don’t know” rather than an immediate answer, the ad portrays exploration and thought over certainty, which is exactly what Claude’s tagline, “Keep thinking,” asks for. It also mimics how Claude actually begins responding to complex questions.
+t|Script 1, specifically, highlights the question of “god”, with a single, simple moment as an imaginative reflection that has transcended human thought for as long as time.
+h|Script 1 — Grandma and grandson
+s|INT. GRANDMA’S LIVING ROOM - NIGHT
+a|Warm lamp light. GRANDMA sits in her chair with a cup of tea. Her GRANDSON sits on the floor near her feet.
+c|GRANDSON
+d|Grandma, does God really exist?
+a|Grandma while sipping her tea.
+c|GRANDMA
+d|Um…I don’t know.
+a|A pause.
+c|GRANDMA (CONT’D)
+d|Science hasn’t found him, and faith hasn’t proven him, I guess. But both keeps juggling. And so do I. Like a ball in the mix, haha.
+c|GRANDSON
+d|I thought you knew. Grandma
+a|She smiles.
+c|GRANDMA
+d|Not knowing isn’t the end of a question, it’s the start of one.
+a|She stands and takes his hand.
+c|GRANDMA (CONT’D)
+d|Let’s start with looking at what people have thought about this for thousands of years. Together.
+s|INT. GRANDMA’S LIVING ROOM, WINDOW TABLE - NIGHT
+a|A laptop and old books lie open together on the table. The grandson flips pages. Grandma reads aloud from the screen. Both lean in. Lamp-lit.
+a|FREEZE FRAME.
+a|SUPER: “We know when we don’t.”
+a|BRAND SIGN-OFF: “Keep thinking.”
+a|CLAUDE LOGO.
+n|Post production notes (important)
+t|For the script 1 to have a more mythical feel, the final edit would have cuts to philosophy-themed things, like Roman statues, pages being turned, a king’s royal court, etc at tension points. Overall making the film feel classical, with song vibe like-
+m|mozart-40-excerpt.mp3|Mozart, Symphony No. 40 in G minor, K. 550 (first movement, 10 second excerpt)
+h|Script 2 — Couple communication
+s|INT. BEDROOM - NIGHT
+a|Dim light. BOYFRIEND and GIRLFRIEND lie in bed. Looking at the ceiling. The room is quiet after a tense moment. No music as the frame shows them.
+c|GIRLFRIEND
+d|Do you think you get defensive, when we talk…talk about things.
+a|A pause. He continues to look at the ceiling, while she looks at him.
+c|BOYFRIEND
+d|I don’t know…yes I do… I always do… I see myself doing it, too.
+a|A longer pause. She, slightly surprised, continues to look at his admission.
+c|BOYFRIEND (CONT’D)
+d|Whenever I feel discomfort, I start to lash out, rather than pause and seek both of our well beings in that moment.
+a|Silence for a beat.
+c|BOYFRIEND (CONT’D)
+p|(quieter)
+d|I want to change…learn how to change.And I don’t know how to.
+a|She doesn’t answer right away. He sits up.
+c|BOYFRIEND (CONT’D)
+d|Do you?
+a|She nods. Their hands find each other.
+c|GIRLFRIEND
+d|No.. But let’s try.
+a|In the background, out of focus, a laptop sits open on a desk. The screen glows faintly. Neither of them looks at it.
+a|FREEZE FRAME.
+a|SUPER: “We know when we don’t.”
+a|BRAND SIGN-OFF: “Keep thinking.” followed by “Trying.” The word “Trying.” is a cut-paper element added to the standard tagline for this ad only. CLAUDE LOGO.
+n|Post production notes (script 2)
+t|Script 2’s vibe is thought of, as the colour “purple”, with an intense piano music beat. Or a country like “Ring of Fire” by Johnny Cash, at the tense points-
+m|ring-of-fire-excerpt.mp3|Johnny Cash, Ring of Fire (10 second excerpt)
+t|Fast paced edit cuts to happy nature themed imagery; with scenes like purple graded sunflower farms, villagers churning water from a handpump, while the large water body along side them— balancing a base of tranquility and peace over the tense yet silent moment between the couple.
+t|The message of “Claude in a laptop” being the catalyst is subtle here, deliberately. Since people don’t necessarily and explicitly like the idea of sitting in front of their computers and finding solutions for their real world troubles.
+`},
+{n:"ChatGPT",m:"g",L:`
+t|Chosen Problem: As competition and negative narratives around AI intensifies, ChatGPT must strengthen its market leadership while protecting and improving public perception of the brand.
+t|(In the AI world, Claude plays the good cop against ChatGPT. Context: All the founders of Anthropic left OpenAI on the premise that it isn’t taking risks seriously and that Sam Altman isn’t reliable or trustworthy. Even ad campaigns by Anthropic at Superbowl take jabs at ChatGPT.)
+h|Strategy
+t|We are not fighting against that “bad cop” image. In fact, subtly building on that. The company’s mission is “AGI for all people’s benefit”. We are picking that “mission-orientedness” as the theme to continue in the messaging, with an absurd filter as an imagery element over the top.
+h|User
+t|The real stance against competitors as a leader, should be not addressing them at all.
+t|And doubling down on keeping the foundation strong by keeping the “power users” through mission-oriented messaging.
+t|An AI power user is somebody who strives and is hyper-ambitious, regardless of the category or industry they are in. They are motivated by mission and by something more than themselves.
+t|To the point that immediate safety isn’t on their horizon, since they are just too into progress— which is the position opposition holds.
+t|These are company heads, geeks on the internet, which are also ultimately the people who are willing to pay and compel others via organic promotion.
+h|Creative
+t|“Your time is not yours.”
+f|spec-chatgpt.jpg|Poster for ChatGPT: a lone photographer on a hill under a blue sky, with the line Your time. Your time isn’t yours.
+t|“Your time is not yours.” At first it sounds like a supreme leader laying down orders to their peasants. But the actual dictatorial ruling of a society is more subtle and only implicitly stated.
+t|The motivational, mission-oriented, half-done line gives the feel we want. It is provocative, but all we want to communicate is not slavery to AI but slavery to one’s mission and its duty to society, which has been considered noble even by the Greeks.
+t|We are using Claude’s advertisement theme against them. People might notice and talk about the subtle similarity we’re creating by repeating a single phrase. In the Claude commercial, it was “Problem, problem.” (When in business, you shouldn’t compete. Subtly competing in creative direction might work to raise eyebrows.)
+l|https://youtu.be/FDNkDBNR7AM|Reference: Claude – Keep Thinking with Claude
+h|Video ad script
+s|MONTAGE - PEOPLE AT WORK
+a|Absurd visual feel, leaning toward black and white. Rock background music, something like “Rocket Man” by Elton John. Visuals of people striving and working really hard, showing passion for their work.
+c|NARRATOR
+p|(V.O.)
+d|Your… time… your time… your time.
+d|Your time isn’t… your time is, is not, yours.
+d|Your time isn’t yours.
+d|Isn’t time yours?
+d|Time is mission.
+d|Your time isn’t yours. It’s for your mission.
+d|Mission is time.
+d|Your time isn’t yours. It’s for your society.
+d|Society is time.
+d|Time is mission.
+d|Your time isn’t.
+d|Your time. Your time isn’t yours.
+d|Your time isn’t yours. It is for your mission. It’s for your society.
+a|CHATGPT LOGO.
+`},
+{n:"The Hindu",m:"i",L:`
+t|Chosen Problem: Newspapers are seen as an old technology. They are more effortful than mobile phones and culturally seen as outdated.
+h|Strategy
+t|Insight: People like to associate with cool, aesthetic things.
+t|Strategy: Make reading The Hindu the embodiment of a cool aesthetic ritual or practice to participate in.
+t|Advantage: Most brands compete on inside-the-box metrics in the newspaper world like content reliability, trust etc.
+t|Aesthetic framing for a newspaper is outside the box. The Hindu’s already established quality/reliability distinction over content (“written by journalists” campaign) can now, also take over the aesthetic experience of reading a newspaper.
+h|Creative
+t|“Newspapers aren’t cool anymore. Their readers always were.”
+f|spec-the-hindu.jpg|Poster for The Hindu: a man reading a newspaper in a dim, old hall, with the line Newspapers aren’t cool anymore. Their readers always were.|p
+t|Insight: Cultural- we associate newspapers with uncles. So by association, if we made the uncle cool, that would transfer to The Hindu.
+t|Psychological- How others see us while we read a newspaper, or how we imagine they see us, gives it an aesthetic value that a mobile phone cannot match.
+t|Idea: Inventing the character of the typical newspaper reading uncle, with the tagline “Beta, when has depth not been cool?”
+t|Making Depth and cool become congruent, because depth/quality is what The Hindu has established itself as.
+t|Solution: Simple scripts built on its hero being the edit itself, which are super popular across platforms like Instagram/YouTube as a theme of building someone’s “coolness”.
+h|Film 1 — Introduction of The Hindu newspaper uncle (Hindi version)
+s|EXT. STREET
+a|A few kids walk down a street. An uncle sits reading a newspaper, his face hidden behind it.
+c|KID 1
+d|“Uncle, newspaper kon padhta hai ab. Chodh do isko.”
+c|KID 2
+d|“Vo zamana gaya ab uncle. Phone pe dekhliya karo news.”
+c|KID 3
+d|“Kya uncle. Cool bano thoda!”
+a|Uncle slowly moves a toothpick in his mouth. Cinematic angle: only the toothpick visible, showing what’s happening behind the newspaper.
+a|Newspaper goes to the side. Reveal uncle’s outfit: lungi, shirt, sunglasses, tea beside him.
+c|UNCLE
+d|“Beta… when has depth not been cool?”
+a|Then comes an Instagram/YouTube type fan edit of him. Rough sequence: one shot, top to bottom. One shot, camera zooming out as he folds the newspaper. One shot of him highlighting something on the paper. One shot of him sipping tea. One shot of him sitting, feet folded. Zoom in, zoom out.
+p|(beats in sync with the edit)
+a|Kids look surprised.
+c|KID 1
+d|“Uncle, aap theek toh ho na?”
+p|(an anchor line to connect all the pieces, along with the tagline. Addressing the absurdity of it all.)
+h|Film 2 — Continuation (newspaper cutting art)
+s|EXT. STREET
+a|Same kids, crossing the same street.
+c|KID 1
+p|(to the others)
+d|“Are, ye wahi newspaper wale uncle hai. Koi kuch bolna mat.”
+a|Kids cross by uncle.
+c|UNCLE
+p|(while showing his art)
+d|“Are beta, kaha ja rahe ho? Ye meri art toh dekh ke jao.”
+c|KID 1
+d|“Uncle, ab ye kya hai?”
+c|UNCLE
+d|“Kuch nahi beta, apni girlfriend ke liye newspaper cutting se appreciation card bana raha tha… dekho… Healthy relationships mein karna padta hai.”
+c|KID 3
+p|(a small kid, new to the group)
+d|“Uncle, girlfriend toh cool logo ki hoti hai. Aap toh?”
+a|After the little boy’s line, the other kids get annoyed as they remember what had happened earlier with the uncle. Addressing the small kid has made a mistake by pressing uncle’s buttons the wrong way — meaning uncle would have to show off again.
+c|UNCLE
+d|“Beta, when has depth not been cool?”
+a|Instagram/YouTube type fan edit sequence of uncle with his newspaper art.
+p|(beats in sync with the edit)
+a|Kids look surprised.
+c|KID 3
+d|“Uncle, aap theek toh ho na?”
+h|Film 3 — Uncle on a date
+s|INT. RESTAURANT
+a|Newspaper uncle is on a date.
+c|GIRL
+d|“So what do you like - beaches or mountains?”
+c|UNCLE
+d|“I like well researched, reliable and unbiased quality perspectives that help me grow…What do you like?”
+a|A shot of Girl looking surprised, interested. Uncle takes a sip of his chai.
+c|UNCLE
+d|“I do see some quality in you too, what are you, The Hindu newspaper haha?”
+p|(uncle laughs awkwardly and loudly)
+a|People on other tables, looking confused.
+c|GIRL
+d|“What… whatever! But tell me how are you so…?”
+c|UNCLE
+d|“Cool. Hmm… I don’t know. When has depth not been cool?”
+a|Edit sequence of uncle.
+p|(beats in sync with the edit)
+a|CAMERA PAN OUT. Kids sitting at the table next to him.
+c|KID 2
+d|“Uncle, aap theek toh ho na?”
+t|Continuation of such a storyline would make the messaging stick for the brand.
+`},
+{n:"Hinge",m:"u",L:`
+t|Chosen Problem: According to SSRS (2026) Dating-app usage is softening in the US: the proportion of adults currently using dating apps fell from 7% in 2025 to 6% in January 2026.
+h|Strategy
+t|Though quantitative data is unavailable, but observationally, a lot of people using dating apps have already had at least one breakup or infatuation before.
+t|So their current identity, as they use the apps, isn’t an isolated one. That context of “1)how they feel about themselves in the “love” context”, “2)feel about others”, and “3) feel about themselves with others. sits deep.”
+t|And dating apps have not addressed the past or that identity; and have always directed folks to the future, even though past stays heavy, still.
+t|Communicate, with subtle messaging, addressing love as a continuous process — though not explicitly in such a way that past itself starts to hurt yet again and people don’t think about new dates at all..
+t|So, for a lack of a better word, milder form of “melancholy” is a helper here, for us, as a messaging medium. To forge and continue the steps of love, literally, onto the next.
+t|Such a strategy chases an unsaid reality, which you feel when you realise the person you are on a date with, hasn’t moved on. Or are still trying to process, amidst their journey to find a new partner. And so are you. Subconsciously or consciously. At least in some way.
+t|Solution: Address that unsaid subcontext with storytelling.
+h|Creative
+t|“Message to you: See me in everyone and know that I am happy for you.”
+t|“Message to you: See me in everyone and know that I am happy for you.” (first part—Continuation of love. Second part— well being assurance.)
+f|spec-hinge.jpg|Poster for Hinge: a smiling woman in a black-and-white double exposure of a street festival, with the line See me in everyone and know that I am happy for you.
+t|Acts as a messaging to your ex, that I am in the process of healing and at the same time hoping the best for you; while knowing that love continues, regardless of humans literally changing,places— like a musical chair for life.
+t|Portraying love as a continuous chain rather than cuts and joints. A bit philosophical— eternal love and all souls as one.
+t|Which, continues the brand image as an app meant to make love feel emotionally healthy.
+h|Video script — A living love letter
+t|Also posted on Instagram posts as textual letter.
+s|INT. HOUSE
+a|CHLOE sits at a spot in her house, returned from a trip with her friends and reading the letter she wrote, ruminating. The visual for the screen is photo montage and clips of the girls trip.
+c|CHLOE
+p|(V.O.)
+d|Did we die? We didn’t. We both know it. I love him everyday and he’s not you. And was never meant to be.
+d|But wasn’t my love same? For you and him? I question. And never find an answer; but perhaps I am always closer to a yes than a no. Or atleast want it to be that way.
+d|You said to me, “see me in everyone and know that I am happy for you.”
+d|You smiled, as you left me— continuing your inhuman gesture of always being altruistic. I call it inhuman because it is too human of you.
+d|You died, John. You died putting me at the heights of the sky. All while burying yourself.
+d|That wasn’t love. From your side.
+d|I know that you made sure, I would continue to do everything I should possibly do to make myself happy, after you would be gone. I cried, and denied that last happiness to you; begging to you that I won’t be, without you.
+d|And that is when you lost your smile, John. You were worried. Not at the sight of losing me, but at the feeling that you hadn’t done your part well for our doomsday, in caring for me. That’s what the air felt like around us.
+d|But, crying still, I knew that wasn’t true.
+d|You still felt, the need to reassure of how I could. And how I would. Continue to live.
+d|Though my eyes, even then, only wished to know of you. But, as in every other part of my life, I was overshadowed by myself there too, and it took away the attention you needed to give to yourself.
+d|You though, have been true, I see you. Silently. Smilingly. Alive. In everyone else.
+d|And you too, should know today, that I have not said what I could to you and that will, shall stay the same way. “Know that I see you in everyone and I know that you are happy for me.”
+a|Her friends come and starts to read the letter. Showing healthy relationships even with friends.
+a|Hinge logo.
+t|Such a creative, if continued, can even be turned into a book for the brand.
+`}],
+o:[
+{n:"Product Teardown — Airbnb",L:`
+g|airbnb-experiences-teardown.pdf|Airbnb Experiences teardown
+l|airbnb-experiences-teardown.pdf|Open the PDF in a new tab
+`},
+{n:"Empathy Mapping — 1 on 1 interviews",L:`
+g|zomato-qualitative-research.pdf|Zomato qualitative research
+l|zomato-qualitative-research.pdf|Open the PDF in a new tab
+`},
+{n:"Concept Brand Formation",sub:"A Concept Makeup Brand: DON’T",L:`t|“DON’T buy our makeup if it makes you feel you are nothing without it.”
+t|“Unfortunately for DON’T customers - exercise, diet and sleep before makeup.”
+h|Brand Manifesto
+t|DON’T is a makeup brand formed on the premises of the philosophy of “negation before addition”. Closer to Advaita Vedanta’s “neti-neti” or modern Nassim Taleb’s “via negativa”—where the more reliable way to reach beauty and truth is firstly by eliminating the wrong than adding what we perceive as good. Hence comes the name “DON’T”, which redirects our attention from unnecessary noise to what’s truly important. To reach, or rather, to uncover our beauty.
+t|It promotes the practice of conscious makeup, which is done deliberately and not out of the many psychological insecurities or pressures we humans are so prone to. Conscious, not just in checking ingredient lists, but in our usage practices of it, on our face.
+t|We think of makeup as a tool of extension. Not as a transformation that turns a person from ugly to beautiful, but more like a garnish on what’s already beautiful in you, and how it radiates from your face.
+t|Therefore, we are strictly light makeup focused. We simply don’t sell heavy makeup.
+t|But who defines what’s minimal? Something internal does. We see it every time we push it away when it points us to something true about ourselves. When there is an eerie discomfort we feel about our choices. When we don’t oblige with what we truly want. When we artificially try to feel better in the masks we wear.
+t|So when the extra shades start to feel too foreign, you know where you went a step ahead.
+t|Our effort is for wearing a mask that doesn’t force you to be what the mask is, but to have control over what you want it to be. And that is where the real individual’s voice shines again. Where, as the popular saying goes, the world is a cinema and you are the star. But in our version, the star is both deeply entrenched in the act but also conscious of her part and acting in it. Never letting the world take away what’s true underneath.
+t|Then why no makeup at all?
+t|Because we don’t see “thoughtful makeup” as camouflaging, or as self denial. It’s a deliberate showoff. Quite opposite to hiding oneself.
+t|Culturally, women have participated in the ritual of self care, but when that self care turns into wanting to be someone else, or a version of you that you are not, that’s where we step back.
+t|If we closely look at the word “makeup” itself, the implicit interpretation can seem like it is asking for making up for something lost or something that’s already not there. So we have redefined makeup as “touchup”, which tells you everything you need to know about us. When we say we are touching up, there’s already an underlying layer called our natural face, which allows for a bit of cosmetic sparkle on it. Again quite opposite to the general coined use of touching up, which is more makeup on already done makeup.
+t|One last thing. Warning for that matter. It is going to be hard. To choose less. To have more accountability. To see people using anything that reads “beauty” and being on the other side of that conversation. To be more open and less reclusive about your face and how you see yourself. To allow the natural fit of yours to be your own, this time. Truly.
+h|Strategy
+t|Chosen Problem: The Indian makeup industry or makeup industry as a whole doesn’t address the problems with the western overconsumption framing of beauty. Which leads to dissatisfaction and exacerbated insecurities women continue to feel— even while using the thing that was intended to fix it.
+t|Insight: By explicitly telling the truth, bearing the burden of costly signalling and taking the loss on one’s own revenue by not selling heavy makeup, the brand wouldn’t preach what it stands for but will show it. Such a positioning can’t be faked. With almost no brand holding such strong opposing values against the flux of the hyper-consumerist makeup market, addressing that we have been selling insecurities would be an honest word in the pool of “you look bad, you will look better by using…”.
+t|Advantage: differentiation in the industry or clean makeup market specifically, is mainly on metrics like ingredients, clean or natural, skin inclusive etc., and the assumption of “more is better” is implicit in top players’ positioning. What looks like direct competition, in the indian context, for clean brands like Minimalist is in fact not, on a fundamental level. Minimalist is built on transparency on the product ingredients side. DON’T differentiates on the psychology of makeup usage itself and on its philosophy.
+t|Strategy: the name “DON’T” holds the negation factor, which makes people have an extreme take on it. Not something you can ignore. Either like the philosophy or feel discomfort around it, because it requires redressal of your own values and choices. The brand picks the niche of women who also oppose the heavy makeup narrative and dislike the scrutiny attached to the act of makeup itself. By framing light makeup as literally the right kind of makeup, the brand takes the one sided risk of redefining what beauty is. It can then continue to hold its radical messaging with its new expected momentum and continue its marketing efforts in this same view.`}
+]};
+
+var $=function(s){return document.querySelector(s)};
+function esc(x){return x.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+var LAB=/^(Chosen Problem|Problem|Insight|Advantage|Strategy|Creative Insight|Solution|Idea):/;
+var GLOBE='<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><ellipse cx="8" cy="8" rx="2.8" ry="6.2"/><path d="M1.8 8h12.4"/></svg>';
+var CHAKRA='<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2"/><circle cx="8" cy="8" r=".8"/><path d="M8 1.8v12.4M1.8 8h12.4M3.6 3.6l8.8 8.8M12.4 3.6l-8.8 8.8"/></svg>';
+function lines(L){
+ var o="",sp=0;
+ L.trim().split("\n").forEach(function(r){
+  var i=r.indexOf("|"),t=r.slice(0,i),x=r.slice(i+1),scr=/^[sacpd]$/.test(t);
+  if(scr&&!sp){o+='<div class="sp">';sp=1}
+  if(!scr&&sp){o+="</div>";sp=0}
+  if(t=="t"){var q=(x.charAt(0)=="“"&&x.slice(-1)=="”")?" q":"";var mm=LAB.exec(x);
+   if(mm){var bd=esc(x.slice(mm[0].length).replace(/^\s+/,""));
+    o+=mm[1]=="Chosen Problem"?'<div class="cp"><span class="lab">Chosen Problem:</span><p>'+bd+"</p></div>":'<p class="lb"><span class="lab">'+mm[1]+":</span>"+bd+"</p>"}
+   else o+='<p class="'+q.trim()+'">'+esc(x)+"</p>"}
+  else if(t=="h")o+='<h2 class="hd">'+esc(x)+"</h2>";
+  else if(t=="n")o+='<p class="nt">'+esc(x)+"</p>";
+  else if(t=="m"){var a=x.split("|");o+='<figure class="au"><figcaption>'+esc(a[1])+'</figcaption><audio controls preload="none" src="'+a[0]+'"></audio></figure>'}
+  else if(t=="g"){var g=x.split("|");o+='<p class="hint">Scroll to read the deck. Pinch to zoom on a phone.</p><div class="deck" data-pdf="'+g[0]+'" data-alt="'+g[1]+'"></div>'}
+  else if(t=="f"){var f=x.split("|");o+='<figure class="fg'+(f[2]=="p"?" pt":"")+'"><img src="'+f[0]+'" alt="'+f[1]+'" loading="lazy"></figure>'}
+  else if(t=="l"){var l=x.split("|");o+='<p><a href="'+l[0]+'" target="_blank" rel="noopener">'+l[1]+" ↗</a></p>"}
+  else if(scr)o+='<p class="'+t+'">'+esc(x)+"</p>";
+ });
+ if(sp)o+="</div>";
+ return o}
+
+var PDFB="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/",pdfLoad=null,pdfDocs={};
+function pdfLib(){
+ if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc=PDFB+"pdf.worker.min.js";return Promise.resolve(pdfjsLib)}
+ if(pdfLoad)return pdfLoad;
+ pdfLoad=new Promise(function(res,rej){
+  var sc=document.createElement("script");sc.src=PDFB+"pdf.min.js";
+  sc.onload=function(){pdfjsLib.GlobalWorkerOptions.workerSrc=PDFB+"pdf.worker.min.js";res(pdfjsLib)};
+  sc.onerror=function(){pdfLoad=null;rej(new Error("pdf.js did not load"))};
+  document.head.appendChild(sc)});
+ return pdfLoad}
+function drawPage(doc,sl,i){
+ doc.getPage(i).then(function(pg){
+  var v0=pg.getViewport({scale:1}),w=sl.clientWidth||800,dpr=Math.min(window.devicePixelRatio||1,2),
+   v=pg.getViewport({scale:(w/v0.width)*dpr}),c=document.createElement("canvas");
+  c.width=Math.floor(v.width);c.height=Math.floor(v.height);c.setAttribute("role","img");c.setAttribute("aria-label",(sl.parentNode.dataset.alt||"Slide")+", slide "+i+" of "+doc.numPages);
+  return pg.render({canvasContext:c.getContext("2d"),viewport:v}).promise.then(function(){
+   sl.insertBefore(c,sl.firstChild);
+   return pg.getAnnotations()}).then(function(an){
+   an.forEach(function(a){
+    if(a.subtype!=="Link"||!a.url)return;
+    var r=v0.convertToViewportRectangle(a.rect),x=Math.min(r[0],r[2]),y=Math.min(r[1],r[3]),ww=Math.abs(r[2]-r[0]),hh=Math.abs(r[3]-r[1]),l=document.createElement("a");
+    l.className="ov";l.href=a.url;l.target="_blank";l.rel="noopener";l.setAttribute("aria-label","Open linked page");
+    l.style.cssText="left:"+x/v0.width*100+"%;top:"+y/v0.height*100+"%;width:"+ww/v0.width*100+"%;height:"+hh/v0.height*100+"%";
+    sl.appendChild(l)})})
+ }).catch(function(){})}
+function initDecks(){
+ document.querySelectorAll(".deck[data-pdf]").forEach(function(box){
+  var f=box.dataset.pdf;
+  box.innerHTML='<p class="dk">Loading the deck…</p>';
+  var P=pdfDocs[f]||(pdfDocs[f]=pdfLib().then(function(lib){return lib.getDocument(f).promise}));
+  P.then(function(doc){
+   return doc.getPage(1).then(function(p1){
+    var v=p1.getViewport({scale:1});box.innerHTML="";
+    var io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);drawPage(doc,e.target,+e.target.dataset.n)}})},{rootMargin:"900px 0px"}):null;
+    for(var i=1;i<=doc.numPages;i++){
+     var sl=document.createElement("div");sl.className="sl";sl.dataset.n=i;sl.style.aspectRatio=v.width+"/"+v.height;box.appendChild(sl);
+     if(io)io.observe(sl);else drawPage(doc,sl,i)}})
+  }).catch(function(){
+   delete pdfDocs[f];
+   box.innerHTML='<iframe class="pf" src="'+f+'" title="'+(box.dataset.alt||"PDF")+'"></iframe>'})
+ })}
+
+
+/* outreach */
+var OUT='<div class="ow l"><h1 class="oh">You can’t not think about the work you like.</h1>'
++'<p class="lb">Here are a few agencies and brands whose work I admire. So I tweaked the statements, strategy, and copy to get the most out of “creativity itself” and potentially add value in the mix.</p>'
++'<p class="od">All creative artifacts made here do not represent any brand or agency and are created solely by the author for demonstration of his ideas and suggestions.</p>'
++'<nav class="ol" aria-label="Agencies"><a class="oa" href="#out-motion">Motion Sickness</a></nav>'
++'</div>';
+
+var MS="https://motionsickness.company/work/";
+var CAMP=[
+{t:"The Kathmandu",u:MS+"outsideyourcomfortzone/",i:"motion-kathmandu.jpg",a:"Night campsite under a tarp, two people by a fire, with the text Home is Outside.",h:`
+<p>“Outside, your comfort zone” is such a cool line. I said “wow” when I got the meaning a little later, after first reading it. It carries two meanings:</p>
+<ul><li>It shows people that outside (the outdoors) is your comfort zone.</li><li>It gives the more direct, commonly said motivation: get outside your comfort zone.</li></ul>
+<span class="lab">My addition</span>
+<div class="cp"><small>Copy</small><p>“Home is Outside.”</p></div>
+<ul><li>It matches how the films take human experiences that seem indoor and personal, and show them outside.</li><li>On a philosophical level, humans were meant to stay in the natural world more than the artificial one.</li><li>The line itself is ironic.</li></ul>
+<span class="lab">Creative direction</span>
+<p>The current films first use close-up shots to show the elegance of simple human experiences. Then they show shots of nature, to describe how those same moments, which people usually have inside their houses, look literally in the wild.</p>
+<p>My addition is to show this contrast visually. Firstly showing those everyday moments when it seems like the person is inside their house (but really the film is still of the outside— which is portrayed well). Then a surprising transition into the wild.</p>
+<p>Current creative direction is rather straight.</p>
+<p>Seeing that the person is brushing, reading or sleeping “outside” should come as a surprise. (This would bring in the realisation of “what they currently are” versus “what they could be”.)</p>
+<span class="lab">If I were writing purely for the geeks</span>
+<p>“Home’s outside.” It shows how the inner self (home) has possession of the outside world, and of course, simply, home is outside.</p>`},
+
+{t:"Karangahape Road",u:MS+"eatit/",i:"motion-karangahape.jpg",a:"Six black-and-white posters with food and kink imagery under the line Smell, bite, chew and swallow.",h:`
+<p>The campaign shows kink + food imagery for restaurants, embracing the context of the place. “Eat It” is simple, short and authoritative, and it captures the essence.</p>
+<span class="lab">My addition</span>
+<p>I might want to go over the top for this one, to capture both smell and taste, and not understate the sensuality that is allowed in both food and kink.</p>
+<div class="cp"><small>Copy</small><p>“Smell, bite, chew and swallow.”</p></div>`},
+
+{t:"Griffin’s",u:MS+"life-needs-a-biscuit-/",i:"motion-griffins.jpg",a:"Red billboard reading Kiwis need a, followed by a round biscuit.",h:`
+<p>The campaign portrays 24 different films with 24 different moments of normal, everyday life: people in New Zealand eating the biscuits. It is not only simply real, but it also calmly shows an important relationship between biscuits and our lives, which in my experience wasn’t as highlighted.</p>
+<p>In India, all the ads were a celebrity endorsing while eating it, or a jingle for kids, or something else I don’t even remember anymore.</p>
+<span class="lab">My addition</span>
+<p>I feel we are underscoring the potency of community, and a macro-level integration of the biscuit with the whole nation. We are already covering the campaign holistically with people from different walks of life (the 24 different moments) in the country. So why not actually say that too?</p>
+<p>The company is also purely New Zealand led. So “life” can be tweaked to “Kiwis”.</p>
+<div class="cp"><small>Copy</small><p>“Kiwis need a biscuit.”</p></div>`},
+
+{t:"Heart of the City",u:MS+"straightotheheart/",i:"motion-heart-of-the-city.jpg",a:"Close-up of a taxi roof sign reading Free Taxi, with a screen showing an event, its price per person and time.",h:`
+<p>I think the film beautifully captures old-style advertising and the idea of service. It invites the old fun times, and makes spontaneous bystanders, locals and tourists excited to hop on and experience different destinations in the heart of the city.</p>
+<span class="lab">My addition</span>
+<div class="cp"><small>Copy</small><p>“JOJI. $127-$208 per person. 7PM”</p></div>
+<p>A banner highlighting a specific event, on top of the taxi or somewhere else on it.</p>
+<p>People don’t visit the city center unless something specific excites or urges them. Money or fare was never an issue in itself, so a free ride alone wouldn’t compel them to go there.</p>
+<p>The ask has to be specific, very exciting and unique, and shown to them that day. For example:</p>
+<ul><li>an artist coming there</li><li>a specific trade fair</li><li>on normal days, simply an exciting food deal at a particular restaurant.</li></ul>
+<p>And of course, the more spontaneous ones can still ride without a destination.</p>
+<p>The organisation can decide on some agreement and periodically recommend specific events, with price and details, on the taxi itself. Rather than only being a tour guide.</p>`},
+
+{t:"Les Mills",u:MS+"beimperfect/",i:"motion-les-mills.jpg",a:"Black-and-white photo of a smiling man at a weight bar, with purple text Only the first step, unlocks the second, and white text There is no perfect.",h:`
+<p>The cinematography is great. The inner monologue, yes sir. And the insight that perfectionism doesn’t help you by itself is shown well. The intimidation and self-consciousness are real, and countering them allows people to be themselves. “Susshh!” highlights a key tension-releasing moment in the film.</p>
+<span class="lab">My addition</span>
+<p>I don’t want to dictate what you can or should be. My point is that, your aspiration of being perfect itself is false.</p>
+<div class="cp"><small>Copy</small><p>“Only the first step, unlocks the second.”</p><p>“There is no perfect.”</p></div>
+<span class="lab">For films</span>
+<p>The creative direction would shift. Currently the films show the diverse experiences of normal people. Instead, they would directly show the inner monologue and feelings of the buff folks.</p>
+<p>They would show how even the people we aspire to or think are at the top, the regular gym-goers and bros, are in fact struggling just the same. That would make us feel seen.</p>
+<span class="lab">My personal taste</span>
+<p>I can’t not share this while I’m thinking about the topic: I might want to mock playfully, with lines like “All the fatties, join!” or “Feeling skinny, fellas?”</p>
+<p>When all the gyms are either body-positive or buffness-positive, we will be silly! Haha.</p>`}
+];
+var MOTION='<h1 class="oh">Motion Sickness</h1><div class="ow m">'+CAMP.map(function(c){return '<article class="oc"><div class="ob"><h2><a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'<span class="ar"> ↗</span></a></h2>'+c.h+'</div><figure class="of"><img src="'+c.i+'" alt="'+c.a+'"></figure></article>'}).join("")+'</div><p class="ms"><a href="https://motionsickness.company/" target="_blank" rel="noopener">Shout out to Motion Sickness ↗</a></p>';
+
+/* pencil: one smooth hand-drawn line through anchor points */
+function cm(P){var d="M"+P[0][0].toFixed(1)+" "+P[0][1].toFixed(1);
+ for(var i=0;i<P.length-1;i++){var a=P[i-1]||P[i],b=P[i],c=P[i+1],e=P[i+2]||c;
+  d+="C"+[b[0]+(c[0]-a[0])/6,b[1]+(c[1]-a[1])/6,c[0]-(e[0]-b[0])/6,c[1]-(e[1]-b[1])/6,c[0],c[1]].map(function(n){return n.toFixed(1)}).join(" ")}
+ return d}
+function rr(el,w){var a=el.getBoundingClientRect(),b=w.getBoundingClientRect();return{l:a.left-b.left,r:a.right-b.left,t:a.top-b.top,b:a.bottom-b.top}}
+function outPts(w){
+ var as=[].slice.call(w.querySelectorAll(".oa")),P=[],f=rr(as[0],w),r,y,L,R;
+ P.push([-18,f.t-110],[-24,f.t-40]);
+ as.forEach(function(a,i){r=rr(a,w);y=r.b-4;L=r.l-8;R=r.r+10;
+  (i%2?[[R,y-1],[(L+R)/2,y+4],[L,y]]:[[L,y],[(L+R)/2,y+4],[R,y-1]]).forEach(function(q){P.push(q)})});
+ if(as.length%2)P.push([R+40,y+26],[R+16,y+54]);else P.push([L-30,y+26],[L-8,y+54]);
+ return P}
+function motionPts(w){
+ var rows=[].slice.call(w.querySelectorAll(".oc")),W=w.clientWidth,nr=matchMedia("(max-width:860px)").matches,
+  xc=nr?-14:W/2,A=nr?12:Math.min(W*.2,180),P=[],r0=rr(rows[0],w);
+ P.push([xc-(nr?0:10),r0.t-60]);
+ rows.forEach(function(row,i){var r=rr(row,w),s=i%2?1:-1,top=r.t+4,bot=r.b-4;
+  P.push([xc,top],[xc+s*(nr?4:8),(top+bot)/2],[xc,bot]);
+  if(rows[i+1])P.push([xc-s*A,(bot+rr(rows[i+1],w).t)/2])});
+ var z=rr(rows[rows.length-1],w),s=((rows.length-1)%2)?1:-1;
+ P.push([xc-s*A*.6,z.b+40],[xc-s*A*.3,z.b+70]);
+ return P}
+var PEN=null;
+function stopPen(){if(PEN){PEN.off();PEN=null}}
+function startPen(w,build,scrl){
+ stopPen();
+ var ns="http://www.w3.org/2000/svg",rm=matchMedia("(prefers-reduced-motion: reduce)").matches,a,b,L,smp=[],first=true,raf=0,ro=null,lw=w.offsetWidth,lh=w.offsetHeight;
+ function set(n){var o=rm?0:L-n;a.style.strokeDashoffset=o;b.style.strokeDashoffset=o}
+ function upd(){raf=0;if(!scrl)return;var ty=innerHeight*.78-w.getBoundingClientRect().top,n=0;
+  for(var i=smp.length-1;i>=0;i--)if(smp[i][1]<=ty){n=smp[i][0];break}
+  set(n)}
+ function draw(){
+  var o=w.querySelector(".osv");if(o)o.remove();
+  var P=build(w),d=cm(P),s=document.createElementNS(ns,"svg"),c=document.createElementNS(ns,"circle");
+  s.setAttribute("class","osv");s.setAttribute("aria-hidden","true");
+  a=document.createElementNS(ns,"path");b=document.createElementNS(ns,"path");
+  a.setAttribute("d",d);b.setAttribute("d",d);a.setAttribute("class","pl a");b.setAttribute("class","pl b");
+  c.setAttribute("class","pd");c.setAttribute("cx",P[0][0]);c.setAttribute("cy",P[0][1]);c.setAttribute("r",3.2);
+  s.appendChild(a);s.appendChild(b);s.appendChild(c);w.insertBefore(s,w.firstChild);
+  L=a.getTotalLength();a.style.strokeDasharray=b.style.strokeDasharray=L+" "+L;
+  smp=[];for(var i=0;i<=240;i++){var q=a.getPointAtLength(L*i/240);smp.push([L*i/240,q.y])}
+  if(scrl)upd();
+  else if(first&&!rm){set(0);a.getBoundingClientRect();a.style.transition=b.style.transition="stroke-dashoffset 2.2s cubic-bezier(.45,0,.2,1)";set(L)}
+  else set(L);
+  first=false}
+ function onS(){if(!raf)raf=requestAnimationFrame(upd)}
+ draw();
+ if(scrl)addEventListener("scroll",onS,{passive:true});
+ if(window.ResizeObserver){var t=0;ro=new ResizeObserver(function(){if(w.offsetWidth==lw&&w.offsetHeight==lh)return;lw=w.offsetWidth;lh=w.offsetHeight;cancelAnimationFrame(t);t=requestAnimationFrame(draw)});ro.observe(w)}
+ else addEventListener("resize",draw);
+ PEN={off:function(){removeEventListener("scroll",onS);removeEventListener("resize",draw);if(ro)ro.disconnect()}}}
+
+var ML={g:'Global',i:'India',u:'US'};
+function S(l,h){return [l,h]}
+var SP={
+claude:{t:'An AI that says “I don’t know” wins trust',key:'cp',sk:['Strategy','Copywriting'],m:'g',mf:'real',full:'#cp-0',spec:1,img:'spec-claude.jpg',alt:'Poster for Claude: a couple lying head to head, with the line We know when we don’t.',s:[
+S('Problem','In October 2026, ChatGPT drew 55.7% of worldwide generative-AI website traffic and Claude 11.5%, according to Similarweb. Claude needs an edge over ChatGPT without giving away its technical identity.'),
+S('Insight','AI confidently hallucinates. Claude is visibly better at saying it doesn’t know. Admitting faults builds trust, whereas constant agreement erodes it.'),
+S('Line','“We know when we don’t.” It echoes Socrates’s “I know that I know nothing.”'),
+S('Scene','A couple lie in bed after a tense moment.<br><br><b>Girlfriend:</b> “Do you think you get defensive, when we talk…talk about things.”<br><br><b>Boyfriend:</b> “I don’t know…yes I do… I always do… I see myself doing it, too.” Then: “I want to change…learn how to change. And I don’t know how to. Do you?”<br><br><b>Girlfriend:</b> “No.. But let’s try.”<br><br>Out of focus, a laptop glows on a desk. Neither of them looks at it. Sign-off: “Keep thinking.” followed by “Trying.”')]},
+chatgpt:{t:'Winners don’t name second winners',key:'cp',sk:['Strategy','Copywriting'],m:'g',mf:'real',full:'#cp-1',spec:1,img:'spec-chatgpt.jpg',alt:'Poster for ChatGPT: a lone photographer on a hill, with the line Your time. Your time isn’t yours.',s:[
+S('Problem','As competition and negative narratives around AI intensify, ChatGPT must strengthen its market leadership while protecting the brand’s public perception.'),
+S('Insight','Don’t fight the “bad cop” image; build on the company’s mission, “AGI for all people’s benefit.” A leader’s real stance is not addressing competitors at all. Aim at power users: hyper-ambitious people, motivated by mission, who pay and promote organically.'),
+S('Line','“Your time isn’t yours.” At first it sounds like a ruler giving orders. It means not slavery to AI, but duty to one’s mission and to society.'),
+S('Scene','A black-and-white montage of people working hard, with rock music under it. Narrator: “Your time isn’t yours. It’s for your mission. Mission is time. Your time isn’t yours. It’s for your society.” ChatGPT logo.<br><br>The repeated phrase is a deliberate echo of the “Problem, problem” repetition in Claude’s Keep Thinking film.')]},
+hindu:{t:'No uncool that cannot be cooled.',key:'cp',sk:['Strategy','Copywriting'],m:'i',mf:'real',full:'#cp-2',spec:1,pt:1,img:'spec-the-hindu.jpg',alt:'Poster for The Hindu: a man reading a newspaper in a dim hall, with the line Newspapers aren’t cool anymore. Their readers always were.',s:[
+S('Problem','Newspapers are seen as an old technology. They take more effort than a phone and are culturally seen as outdated.'),
+S('Insight','People like to associate with cool, aesthetic things. We associate newspapers with uncles, so if the uncle becomes cool, that transfers to The Hindu. Most newspaper brands compete on reliability and trust. The Hindu already owns quality, so it can take the aesthetic of reading a newspaper too.'),
+S('Line','“Newspapers aren’t cool anymore. Their readers always were.”'),
+S('Scene (Film 1, Hindi)','Kids tell an uncle hiding behind a newspaper to check the news on his phone instead. The paper moves aside: lungi, shirt, sunglasses, tea. Uncle: “Beta… when has depth not been cool?” An Instagram-style fan edit of him plays. A kid asks, “Uncle, aap theek toh ho na?”<br><br>Film 2 (newspaper-cutting art) and Film 3 (the uncle on a date) continue the story.')]},
+hinge:{t:'Long form storytelling for a dating app.',key:'cp',sk:['Strategy','Copywriting'],m:'u',mf:'real',full:'#cp-3',spec:1,img:'spec-hinge.jpg',alt:'Poster for Hinge: a smiling woman in a black-and-white double exposure of a street festival.',s:[
+S('Problem','According to SSRS (2026), the share of US adults currently using dating apps fell from 7% in 2025 to 6% in January 2026.'),
+S('Insight','I have no numbers for this, only observation: many people on dating apps have already had a breakup or an infatuation. Apps point only to the future, though the past stays heavy. A mild melancholy can show love as a continuous chain rather than cuts, and speak to what neither person on a date says aloud.'),
+S('Line','“See me in everyone and know that I am happy for you.” The first half is love continuing. The second half is an assurance of well-being, as if to an ex.'),
+S('Scene','Chloe, back from a trip with friends, reads a letter in voice-over over photos of the trip. It opens: “Did we die? We didn’t. We both know it.” It closes: “Know that I see you in everyone and I know that you are happy for me.” Her friends start reading it too. Hinge logo.')]},
+airbnb:{t:'Why photos beat 5-star reviews on Airbnb Experiences',key:'o',sk:['Business analysis'],m:'i',mf:'real',full:'#o-0',fit:1,img:'airbnb-cooking-photos.jpg',alt:'Foreign guests cooking and eating with a Delhi host. Courtesy @explorerealindia.',s:[
+S('What I did','A product teardown of Airbnb Experiences, a vertical inside the lodging business that gives existing guests more to book. The core user is a foreign tourist staying in Delhi or Gurugram. I looked at friends travelling together and split them by how they book: the deliberate planner, the intuitive selector and the impulse adventurer.'),
+S('What I found','I walked through choosing a home-cooking host near Delhi, as a foreigner would. Clear, high-quality photos of earlier foreign guests win the first impression. They suggest no language barrier, safety and cultural understanding. Written reviews only confirm that trust, and almost every host has 5 stars, often given out of courtesy.'),
+S('What I’d do next','<ul><li>Offer stay and experience as one discounted package.</li><li>Train good hosts, and give them exclusive deals in return.</li><li>Let guests rate language and cultural knowledge separately.</li><li>Add video reviews, so safety is easier to verify.</li></ul>The main metric would be total Experience bookings, with user ratings as the quality check.')]},
+zomato:{t:'Five interviews, one problem: life after you hit order',key:'o',sk:['Research'],m:'i',mf:'real',full:'#o-1',fit:1,img:'zomato-empathy-map.jpg',alt:'Empathy map from one Zomato interview: says, thinks, does, feels.',s:[
+S('What I did','Five one-hour, one-on-one interviews with students and early-career professionals. For the first 80% of each, I let the person lead and tell their own stories. Only at the end did I show the idea I was testing: a faster Zomato checkout that skips the home page, with an opt-out.'),
+S('What I found','All four active users raised delivery problems without being asked: the app not showing where the order is, drivers and restaurants not doing what they promised, and poor coordination between all three. Chatbots gave false reassurance. One person said: “8 out of every 15–16 orders I place are frustrating.” The fifth person doesn’t order online at all, because of price, family habit and never having started.<br><br>The quick-checkout idea got a hesitant yes from almost everyone.'),
+S('What I’d do next','Test it with real users in a narrower group first. Zomato can’t fix drivers directly, but clearer updates after the order can still ease the worry people feel.')]},
+dont:{t:'A makeup brand that wins by selling less',key:'o',sk:['Brand'],m:'i',mf:'own',full:'#o-2',img:'dont-billboard.jpg',alt:'DON’T jar billboard at Pennsylvania Station.',s:[
+S('Problem','The makeup industry doesn’t address the western overconsumption framing of beauty. Women end up with more insecurity, even while using the product meant to fix it.'),
+S('Insight','A brand that takes the loss by not selling heavy makeup doesn’t preach its values, it shows them. That position can’t be faked. Clean brands like Minimalist differentiate on ingredients. DON’T differentiates on the psychology of using makeup and on its philosophy.'),
+S('Idea','“Negation before addition,” close to Advaita Vedanta’s “neti-neti” and Taleb’s “via negativa”: remove the wrong before adding what we think is good. Makeup becomes a “touchup” on what is already beautiful in you, not a transformation. The name makes people take a side, which is the point, since it asks them to look at their own choices.'),
+S('Lines','<ul><li>“DON’T buy our makeup if it makes you feel you are nothing without it.”</li><li>“Unfortunately for DON’T customers: exercise, diet and sleep before makeup.”</li></ul>')]}
+};
+var SPK=['claude','chatgpt','hindu','hinge','airbnb','zomato','dont'];
+function spHTML(k){var p=SP[k];
+ return '<h1>'+p.t+'</h1><span class="tag">'+(p.m=='i'?CHAKRA:GLOBE)+ML[p.m]+' market · '+p.sk.join(', ')+' · 1 min read'+(p.spec?' · Spec':'')+'</span>'+
+ p.s.map(function(x){return '<div class="lb"><span class="lab">'+x[0]+'.</span>'+x[1]+'</div>'}).join('')+
+ '<p><a href="'+p.full+'">Read the full version →</a></p>'+
+ '<figure class="fg'+(p.pt?' pt':'')+'"><img src="'+p.img+'" alt="'+p.alt+'" onerror="this.parentNode.hidden=true"></figure>'}
+function spSide(k){return '<a href="#">← All work</a>'+SPK.map(function(j){return '<a href="#s-'+j+'"'+(j==k?' class="on" aria-current="page"':'')+'>'+SP[j].t.slice(0,44)+(SP[j].t.length>44?'…':'')+'</a>'}).join('')}
+var CMP=[['Kathmandu','Home is Outside.','motion-kathmandu.jpg'],['Karangahape Road','Smell, bite, chew and swallow.','motion-karangahape.jpg'],['Griffin’s','Kiwis need a biscuit.','motion-griffins.jpg'],['Heart of the City','JOJI. $127-$208 per person. 7PM','motion-heart-of-the-city.jpg'],['Les Mills','Only the first step, unlocks the second.','motion-les-mills.jpg']];
+var FIL=[],CLR={'Case studies':'#b0102f',Ideas:'#4c1d95'};
+var GRP=[['Work',['Case studies','Ideas']]];
+var BULB='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/></svg>';
+function card(c){var cs=c.ty=='Case studies',col=cs?'#b0102f':'#4c1d95',
+ inner='<img'+(c.l?' class="l"':'')+' src="'+c.img+'" alt="" loading="lazy" onerror="this.remove()"><span class="ty">'+(cs?'Case study':'Idea')+'</span><span class="tm">'+c.tm+'</span>'+(c.f?'<span class="pp"></span>':'')+'<div class="ov"><h3>'+c.t+'</h3>'+(c.by?'<p class="by">'+c.by+'</p>':'')+'<p class="mt">'+c.sk.join(', ')+' · '+c.m+' · '+c.w+'</p></div>';
+ return c.f?'<div class="cd fc" style="--c:'+col+'" role="button" tabindex="0" aria-label="Play Silence Can Speak">'+inner+'</div>':'<a class="cd" style="--c:'+col+'" href="'+c.href+'">'+inner+'</a>'}
+function allCards(){var c=SPK.map(function(k){var p=SP[k];return {href:'#s-'+k,img:p.img,t:p.t,sk:p.sk,tm:'1 min',m:ML[p.m],w:p.mf=='own'?'Own':'Spec',l:p.fit,ty:['claude','chatgpt','hindu','hinge'].indexOf(k)>=0?'Case studies':'Ideas'}});
+ c.push({f:1,img:'silence-can-speak-poster.jpg',t:'Silence Can Speak',sk:['Film'],tm:'4:47',m:'Global',w:'Own',ty:'Ideas'});
+ CMP.forEach(function(m,i){c.push({href:'#out-motion-'+i,img:m[2],t:'“'+m[1]+'”',by:m[0]+' campaign by Motion Sickness',sk:['Copywriting'],tm:'10 secs',m:'Global',w:'Spec',ty:'Ideas'})});
+ return c}
+function cardsHTML(){var o=allCards().filter(function(c){return !FIL.length||FIL.indexOf(c.ty)>=0});
+ return o.length?o.map(card).join(''):'<p>Nothing matches this filter.</p>'}
+function chipsHTML(){return GRP.map(function(g){return '<div class="gp"><h4>'+g[0]+'</h4>'+g[1].map(function(v){return '<button type="button" class="fb" data-v="'+v+'" aria-pressed="'+(FIL.indexOf(v)>=0)+'" style="--c:'+CLR[v]+'"><i></i>'+v+'</button>'}).join('')+'</div>'}).join('')}
+function profHTML(c){return '<div class="ab '+c+'"><div class="av"><img src="me.jpg" alt="Aditya Verma"></div><div class="pt"><p>99%ile CUET, Delhi University</p><p>Product intern at a VC-backed startup</p><p>1st inter college film</p></div><button type="button" class="tm2" data-open="1">Tell me more →</button></div>'}
+function homeHTML(){return '<div id="cards">'+cardsHTML()+'</div>'+profHTML('pfm')}
+function openMd(){var b=['#0b1f4d','#4c1d95','#b0102f','#000'],t=['<b>Creative Direction, copy and strategy</b>'];
+ var m=$('#md');m.innerHTML='<div class="mc" role="dialog" aria-modal="true" aria-label="About Aditya"><div class="mh">Aditya Verma</div><div class="mav"><img src="me.jpg" alt="Aditya Verma"></div><button class="mx" type="button" aria-label="Close">×</button><div class="mb"><p class="m1">Netting ideas teams can’t find. Denetting what they can. could.</p><p class="m2">Book for a free gig and ghost this guy (me!), if it ain’t it. lol</p><a class="bk" href="mailto:adityavermaworkid@gmail.com?subject=Free%20gig">Book a free gig</a></div>'+t.map(function(x,i){return '<div class="bn" style="background:'+b[i]+'">'+x+'</div>'}).join('')+'</div>';m.hidden=false;m.querySelector('.mx').focus()}
+function closeMd(){$('#md').hidden=true}
+var main=$('#main'),sb=$('#sb'),app=$('#app'),cur=null;
+function lk(x){return '<div class="lk">'+x+'</div>'}
+function route(h){
+ if(typeof h!="string")h=(location.hash||"").slice(1);
+ if(h===cur)return;cur=h;
+ var m=/^(cp|o)-(\d+)$/.exec(h),sec=m&&m[1],i=m?+m[2]:-1,it=sec&&D[sec][i],sm=/^s-([a-z]+)$/.exec(h),sp=sm&&SP[sm[1]],mo=/^out-motion(?:-(\d))?$/.exec(h),films=h=="films",html,title="Aditya Verma",cls="",ns=false;
+ if(it){
+  html="<h1>"+esc(it.n)+"</h1>"+(it.sub?'<p class="sub">'+esc(it.sub)+"</p>":"")+(it.m?'<span class="tag">'+(it.m=="i"?CHAKRA+"Indian market":it.m=="u"?GLOBE+"US market":GLOBE+"Global market")+"</span>":'<div style="height:24px"></div>')+lines(it.L);
+  title=it.n+" — Aditya Verma";cls=" doc"+(/(^|\n)f\|/.test(it.L)?" pz":"")+(/g\|/.test(it.L)?" wide":"");
+  sb.innerHTML=lk('<a href="#">← All work</a>'+D[sec].map(function(p,j){return '<a href="#'+sec+"-"+j+'"'+(j==i?' class="on" aria-current="page"':"")+">"+esc(p.n)+"</a>"}).join(""))
+ }else if(sp){html=spHTML(sm[1]);title=sp.t+" — Aditya Verma";cls=" doc pz";sb.innerHTML=lk(spSide(sm[1]))}
+ else if(films){html=FILM;title="Short films — Aditya Verma";cls=" doc wide";sb.innerHTML=lk('<a href="#">← All work</a><a href="#films" class="on">Silence Can Speak</a>')}
+ else if(mo){html='<p><a href="#">← All work</a></p>'+MOTION;title="Motion Sickness — Aditya Verma";cls=" wide";ns=true}
+ else{html=homeHTML();cls=" hm";sb.innerHTML=chipsHTML()+profHTML('pfd')}
+ app.className=ns?"ns":"";main.className="main"+cls;main.innerHTML=html;document.title=title;
+ window.scrollTo(0,0);
+ stopPen();var pw=main.querySelector(".ow");if(pw)startPen(pw,motionPts,true);
+ if(mo&&mo[1]!=null){var el=main.querySelectorAll(".oc")[+mo[1]];if(el)setTimeout(function(){window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY-24)},60)}
+ initDecks()}
+function go(h){try{location.hash=h}catch(e){}route(h)}
+function refresh(){sb.innerHTML=chipsHTML()+profHTML('pfd');$('#cards').innerHTML=cardsHTML()}
+function playFilm(f){if(f.querySelector('video'))return;f.removeAttribute('role');f.innerHTML='<video src="silence-can-speak.mp4" poster="silence-can-speak-poster.jpg" controls autoplay playsinline title="Silence Can Speak"></video>'}
+document.addEventListener("click",function(e){var t=e.target,c=t.closest?t.closest.bind(t):function(){return null};
+ if(t.id=="md"||c('.mx')){closeMd();return}
+ var b=c('.fb');if(b){var v=b.dataset.v,i=FIL.indexOf(v);if(i<0)FIL.push(v);else FIL.splice(i,1);refresh();return}
+ if(c('[data-open]')){openMd();return}
+ var f=c('.fc');if(f){playFilm(f);return}
+ var a=c('a[href^="#"]');if(a){e.preventDefault();go(a.getAttribute("href").slice(1))}});
+document.addEventListener("keydown",function(e){if(e.key=="Escape")closeMd();var f=e.target.classList&&e.target.classList.contains('fc')&&e.target;if(f&&(e.key=="Enter"||e.key==" ")){e.preventDefault();playFilm(f)}});
+window.addEventListener("hashchange",function(){route()});
+route();
+</script></body></html>
